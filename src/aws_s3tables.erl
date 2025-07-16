@@ -115,7 +115,8 @@
 %% list_table_buckets_request() :: #{
 %%   <<"continuationToken">> => string(),
 %%   <<"maxBuckets">> => integer(),
-%%   <<"prefix">> => [string()]
+%%   <<"prefix">> => [string()],
+%%   <<"type">> => list(any())
 %% }
 -type list_table_buckets_request() :: #{binary() => any()}.
 
@@ -203,7 +204,7 @@
 %% namespace_summary() :: #{
 %%   <<"createdAt">> => [non_neg_integer()],
 %%   <<"createdBy">> => string(),
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"namespaceId">> => string(),
 %%   <<"ownerAccountId">> => string(),
 %%   <<"tableBucketId">> => string()
@@ -216,7 +217,7 @@
 %%   <<"createdAt">> => [non_neg_integer()],
 %%   <<"modifiedAt">> => [non_neg_integer()],
 %%   <<"name">> => string(),
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"namespaceId">> => string(),
 %%   <<"tableARN">> => string(),
 %%   <<"tableBucketId">> => string(),
@@ -247,7 +248,7 @@
 %% update_table_metadata_location_response() :: #{
 %%   <<"metadataLocation">> => string(),
 %%   <<"name">> => string(),
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"tableARN">> => string(),
 %%   <<"versionToken">> => string()
 %% }
@@ -274,7 +275,7 @@
 %%   <<"modifiedAt">> => [non_neg_integer()],
 %%   <<"modifiedBy">> => string(),
 %%   <<"name">> => string(),
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"namespaceId">> => string(),
 %%   <<"ownerAccountId">> => string(),
 %%   <<"tableARN">> => string(),
@@ -325,7 +326,7 @@
 %% get_namespace_response() :: #{
 %%   <<"createdAt">> => [non_neg_integer()],
 %%   <<"createdBy">> => string(),
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"namespaceId">> => string(),
 %%   <<"ownerAccountId">> => string(),
 %%   <<"tableBucketId">> => string()
@@ -335,7 +336,7 @@
 
 %% Example:
 %% create_namespace_request() :: #{
-%%   <<"namespace">> := list(string()())
+%%   <<"namespace">> := list(string())
 %% }
 -type create_namespace_request() :: #{binary() => any()}.
 
@@ -357,7 +358,7 @@
 %% Example:
 %% list_tables_response() :: #{
 %%   <<"continuationToken">> => string(),
-%%   <<"tables">> => list(table_summary()())
+%%   <<"tables">> => list(table_summary())
 %% }
 -type list_tables_response() :: #{binary() => any()}.
 
@@ -454,7 +455,7 @@
 %% Example:
 %% list_table_buckets_response() :: #{
 %%   <<"continuationToken">> => string(),
-%%   <<"tableBuckets">> => list(table_bucket_summary()())
+%%   <<"tableBuckets">> => list(table_bucket_summary())
 %% }
 -type list_table_buckets_response() :: #{binary() => any()}.
 
@@ -477,7 +478,7 @@
 
 %% Example:
 %% create_namespace_response() :: #{
-%%   <<"namespace">> => list(string()()),
+%%   <<"namespace">> => list(string()),
 %%   <<"tableBucketARN">> => string()
 %% }
 -type create_namespace_response() :: #{binary() => any()}.
@@ -518,7 +519,7 @@
 %% Example:
 %% list_namespaces_response() :: #{
 %%   <<"continuationToken">> => string(),
-%%   <<"namespaces">> => list(namespace_summary()())
+%%   <<"namespaces">> => list(namespace_summary())
 %% }
 -type list_namespaces_response() :: #{binary() => any()}.
 
@@ -538,7 +539,7 @@
 
 %% Example:
 %% iceberg_schema() :: #{
-%%   <<"fields">> => list(schema_field()())
+%%   <<"fields">> => list(schema_field())
 %% }
 -type iceberg_schema() :: #{binary() => any()}.
 
@@ -556,7 +557,8 @@
 %%   <<"createdAt">> => [non_neg_integer()],
 %%   <<"name">> => string(),
 %%   <<"ownerAccountId">> => string(),
-%%   <<"tableBucketId">> => string()
+%%   <<"tableBucketId">> => string(),
+%%   <<"type">> => list(any())
 %% }
 -type get_table_bucket_response() :: #{binary() => any()}.
 
@@ -593,7 +595,8 @@
 %%   <<"createdAt">> => [non_neg_integer()],
 %%   <<"name">> => string(),
 %%   <<"ownerAccountId">> => string(),
-%%   <<"tableBucketId">> => string()
+%%   <<"tableBucketId">> => string(),
+%%   <<"type">> => list(any())
 %% }
 -type table_bucket_summary() :: #{binary() => any()}.
 
@@ -1824,7 +1827,8 @@ list_table_buckets(Client, QueryMap, HeadersMap, Options0)
       [
         {<<"continuationToken">>, maps:get(<<"continuationToken">>, QueryMap, undefined)},
         {<<"maxBuckets">>, maps:get(<<"maxBuckets">>, QueryMap, undefined)},
-        {<<"prefix">>, maps:get(<<"prefix">>, QueryMap, undefined)}
+        {<<"prefix">>, maps:get(<<"prefix">>, QueryMap, undefined)},
+        {<<"type">>, maps:get(<<"type">>, QueryMap, undefined)}
       ],
     Query_ = [H || {_, V} = H <- Query0_, V =/= undefined],
 

@@ -223,7 +223,7 @@
 %%   <<"DryRunId">> => string(),
 %%   <<"DryRunStatus">> => string(),
 %%   <<"UpdateDate">> => string(),
-%%   <<"ValidationFailures">> => list(validation_failure()())
+%%   <<"ValidationFailures">> => list(validation_failure())
 %% }
 -type dry_run_progress_status() :: #{binary() => any()}.
 
@@ -279,7 +279,7 @@
 %% update_package_scope_request() :: #{
 %%   <<"Operation">> := list(any()),
 %%   <<"PackageID">> := string(),
-%%   <<"PackageUserList">> := list(string()())
+%%   <<"PackageUserList">> := list(string())
 %% }
 -type update_package_scope_request() :: #{binary() => any()}.
 
@@ -293,7 +293,7 @@
 
 %% Example:
 %% describe_domain_auto_tunes_response() :: #{
-%%   <<"AutoTunes">> => list(auto_tune()()),
+%%   <<"AutoTunes">> => list(auto_tune()),
 %%   <<"NextToken">> => string()
 %% }
 -type describe_domain_auto_tunes_response() :: #{binary() => any()}.
@@ -309,7 +309,7 @@
 %% Example:
 %% list_vpc_endpoints_for_domain_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"VpcEndpointSummaryList">> => list(vpc_endpoint_summary()())
+%%   <<"VpcEndpointSummaryList">> => list(vpc_endpoint_summary())
 %% }
 -type list_vpc_endpoints_for_domain_response() :: #{binary() => any()}.
 
@@ -332,7 +332,7 @@
 
 %% Example:
 %% describe_outbound_connections_request() :: #{
-%%   <<"Filters">> => list(filter()()),
+%%   <<"Filters">> => list(filter()),
 %%   <<"MaxResults">> => integer(),
 %%   <<"NextToken">> => string()
 %% }
@@ -342,7 +342,7 @@
 %% Example:
 %% compatible_versions_map() :: #{
 %%   <<"SourceVersion">> => string(),
-%%   <<"TargetVersions">> => list(string()())
+%%   <<"TargetVersions">> => list(string())
 %% }
 -type compatible_versions_map() :: #{binary() => any()}.
 
@@ -351,7 +351,7 @@
 %% update_package_scope_response() :: #{
 %%   <<"Operation">> => list(any()),
 %%   <<"PackageID">> => string(),
-%%   <<"PackageUserList">> => list(string()())
+%%   <<"PackageUserList">> => list(string())
 %% }
 -type update_package_scope_response() :: #{binary() => any()}.
 
@@ -372,14 +372,14 @@
 
 %% Example:
 %% dissociate_packages_response() :: #{
-%%   <<"DomainPackageDetailsList">> => list(domain_package_details()())
+%%   <<"DomainPackageDetailsList">> => list(domain_package_details())
 %% }
 -type dissociate_packages_response() :: #{binary() => any()}.
 
 
 %% Example:
 %% describe_outbound_connections_response() :: #{
-%%   <<"Connections">> => list(outbound_connection()()),
+%%   <<"Connections">> => list(outbound_connection()),
 %%   <<"NextToken">> => string()
 %% }
 -type describe_outbound_connections_response() :: #{binary() => any()}.
@@ -398,15 +398,15 @@
 %%   <<"DataSourceName">> => string(),
 %%   <<"DataSourceType">> => list(),
 %%   <<"Description">> => string(),
-%%   <<"OpenSearchArns">> => list(string()()),
-%%   <<"TagList">> => list(tag()())
+%%   <<"OpenSearchArns">> => list(string()),
+%%   <<"TagList">> => list(tag())
 %% }
 -type direct_query_data_source() :: #{binary() => any()}.
 
 
 %% Example:
 %% package_details() :: #{
-%%   <<"AllowListedUserList">> => list(string()()),
+%%   <<"AllowListedUserList">> => list(string()),
 %%   <<"AvailablePackageConfiguration">> => package_configuration(),
 %%   <<"AvailablePackageVersion">> => string(),
 %%   <<"AvailablePluginProperties">> => plugin_properties(),
@@ -504,7 +504,7 @@
 
 %% Example:
 %% describe_vpc_endpoints_request() :: #{
-%%   <<"VpcEndpointIds">> := list(string()())
+%%   <<"VpcEndpointIds">> := list(string())
 %% }
 -type describe_vpc_endpoints_request() :: #{binary() => any()}.
 
@@ -561,7 +561,7 @@
 %% Example:
 %% describe_reserved_instance_offerings_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"ReservedInstanceOfferings">> => list(reserved_instance_offering()())
+%%   <<"ReservedInstanceOfferings">> => list(reserved_instance_offering())
 %% }
 -type describe_reserved_instance_offerings_response() :: #{binary() => any()}.
 
@@ -569,7 +569,7 @@
 %% Example:
 %% list_vpc_endpoints_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"VpcEndpointSummaryList">> => list(vpc_endpoint_summary()())
+%%   <<"VpcEndpointSummaryList">> => list(vpc_endpoint_summary())
 %% }
 -type list_vpc_endpoints_response() :: #{binary() => any()}.
 
@@ -587,10 +587,10 @@
 %% instance_type_details() :: #{
 %%   <<"AdvancedSecurityEnabled">> => boolean(),
 %%   <<"AppLogsEnabled">> => boolean(),
-%%   <<"AvailabilityZones">> => list(string()()),
+%%   <<"AvailabilityZones">> => list(string()),
 %%   <<"CognitoEnabled">> => boolean(),
 %%   <<"EncryptionEnabled">> => boolean(),
-%%   <<"InstanceRole">> => list(string()()),
+%%   <<"InstanceRole">> => list(string()),
 %%   <<"InstanceType">> => list(any()),
 %%   <<"WarmEnabled">> => boolean()
 %% }
@@ -606,16 +606,16 @@
 
 %% Example:
 %% describe_domains_request() :: #{
-%%   <<"DomainNames">> := list(string()())
+%%   <<"DomainNames">> := list(string())
 %% }
 -type describe_domains_request() :: #{binary() => any()}.
 
 
 %% Example:
 %% vpc_derived_info() :: #{
-%%   <<"AvailabilityZones">> => list(string()()),
-%%   <<"SecurityGroupIds">> => list(string()()),
-%%   <<"SubnetIds">> => list(string()()),
+%%   <<"AvailabilityZones">> => list(string()),
+%%   <<"SecurityGroupIds">> => list(string()),
+%%   <<"SubnetIds">> => list(string()),
 %%   <<"VPCId">> => string()
 %% }
 -type vpc_derived_info() :: #{binary() => any()}.
@@ -650,7 +650,7 @@
 %%   <<"IPAddressType">> => ip_address_type_status(),
 %%   <<"IdentityCenterOptions">> => identity_center_options_status(),
 %%   <<"LogPublishingOptions">> => log_publishing_options_status(),
-%%   <<"ModifyingProperties">> => list(modifying_properties()()),
+%%   <<"ModifyingProperties">> => list(modifying_properties()),
 %%   <<"NodeToNodeEncryptionOptions">> => node_to_node_encryption_options_status(),
 %%   <<"OffPeakWindowOptions">> => off_peak_window_options_status(),
 %%   <<"SnapshotOptions">> => snapshot_options_status(),
@@ -681,7 +681,7 @@
 
 %% Example:
 %% list_tags_response() :: #{
-%%   <<"TagList">> => list(tag()())
+%%   <<"TagList">> => list(tag())
 %% }
 -type list_tags_response() :: #{binary() => any()}.
 
@@ -709,14 +709,14 @@
 %% Example:
 %% storage_type_limit() :: #{
 %%   <<"LimitName">> => string(),
-%%   <<"LimitValues">> => list(string()())
+%%   <<"LimitValues">> => list(string())
 %% }
 -type storage_type_limit() :: #{binary() => any()}.
 
 
 %% Example:
 %% list_direct_query_data_sources_response() :: #{
-%%   <<"DirectQueryDataSources">> => list(direct_query_data_source()()),
+%%   <<"DirectQueryDataSources">> => list(direct_query_data_source()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_direct_query_data_sources_response() :: #{binary() => any()}.
@@ -768,7 +768,7 @@
 %% Example:
 %% storage_type() :: #{
 %%   <<"StorageSubTypeName">> => string(),
-%%   <<"StorageTypeLimits">> => list(storage_type_limit()()),
+%%   <<"StorageTypeLimits">> => list(storage_type_limit()),
 %%   <<"StorageTypeName">> => string()
 %% }
 -type storage_type() :: #{binary() => any()}.
@@ -790,7 +790,7 @@
 
 %% Example:
 %% associate_packages_response() :: #{
-%%   <<"DomainPackageDetailsList">> => list(domain_package_details()())
+%%   <<"DomainPackageDetailsList">> => list(domain_package_details())
 %% }
 -type associate_packages_response() :: #{binary() => any()}.
 
@@ -798,7 +798,7 @@
 %% Example:
 %% additional_limit() :: #{
 %%   <<"LimitName">> => string(),
-%%   <<"LimitValues">> => list(string()())
+%%   <<"LimitValues">> => list(string())
 %% }
 -type additional_limit() :: #{binary() => any()}.
 
@@ -861,7 +861,7 @@
 %%   <<"DataNodeCount">> => string(),
 %%   <<"DedicatedMaster">> => boolean(),
 %%   <<"DomainState">> => list(any()),
-%%   <<"EnvironmentInformation">> => list(environment_info()()),
+%%   <<"EnvironmentInformation">> => list(environment_info()),
 %%   <<"MasterEligibleNodeCount">> => string(),
 %%   <<"MasterNode">> => list(any()),
 %%   <<"StandByAvailabilityZoneCount">> => string(),
@@ -888,7 +888,7 @@
 
 %% Example:
 %% describe_inbound_connections_response() :: #{
-%%   <<"Connections">> => list(inbound_connection()()),
+%%   <<"Connections">> => list(inbound_connection()),
 %%   <<"NextToken">> => string()
 %% }
 -type describe_inbound_connections_response() :: #{binary() => any()}.
@@ -953,7 +953,7 @@
 
 %% Example:
 %% list_packages_for_domain_response() :: #{
-%%   <<"DomainPackageDetailsList">> => list(domain_package_details()()),
+%%   <<"DomainPackageDetailsList">> => list(domain_package_details()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_packages_for_domain_response() :: #{binary() => any()}.
@@ -980,12 +980,12 @@
 %% Example:
 %% change_progress_status_details() :: #{
 %%   <<"ChangeId">> => string(),
-%%   <<"ChangeProgressStages">> => list(change_progress_stage()()),
-%%   <<"CompletedProperties">> => list(string()()),
+%%   <<"ChangeProgressStages">> => list(change_progress_stage()),
+%%   <<"CompletedProperties">> => list(string()),
 %%   <<"ConfigChangeStatus">> => list(any()),
 %%   <<"InitiatedBy">> => list(any()),
 %%   <<"LastUpdatedTime">> => non_neg_integer(),
-%%   <<"PendingProperties">> => list(string()()),
+%%   <<"PendingProperties">> => list(string()),
 %%   <<"StartTime">> => non_neg_integer(),
 %%   <<"Status">> => list(any()),
 %%   <<"TotalNumberOfStages">> => integer()
@@ -995,7 +995,8 @@
 
 %% Example:
 %% a_i_ml_options_output() :: #{
-%%   <<"NaturalLanguageQueryGenerationOptions">> => natural_language_query_generation_options_output()
+%%   <<"NaturalLanguageQueryGenerationOptions">> => natural_language_query_generation_options_output(),
+%%   <<"S3VectorsEngine">> => s3_vectors_engine()
 %% }
 -type a_i_ml_options_output() :: #{binary() => any()}.
 
@@ -1013,7 +1014,7 @@
 %% Example:
 %% add_tags_request() :: #{
 %%   <<"ARN">> := string(),
-%%   <<"TagList">> := list(tag()())
+%%   <<"TagList">> := list(tag())
 %% }
 -type add_tags_request() :: #{binary() => any()}.
 
@@ -1038,7 +1039,7 @@
 %% Example:
 %% upgrade_history() :: #{
 %%   <<"StartTimestamp">> => non_neg_integer(),
-%%   <<"StepsList">> => list(upgrade_step_item()()),
+%%   <<"StepsList">> => list(upgrade_step_item()),
 %%   <<"UpgradeName">> => string(),
 %%   <<"UpgradeStatus">> => list(any())
 %% }
@@ -1060,7 +1061,7 @@
 %%   <<"DataSourceName">> => string(),
 %%   <<"DataSourceType">> => list(),
 %%   <<"Description">> => string(),
-%%   <<"OpenSearchArns">> => list(string()())
+%%   <<"OpenSearchArns">> => list(string())
 %% }
 -type get_direct_query_data_source_response() :: #{binary() => any()}.
 
@@ -1114,7 +1115,7 @@
 %%   <<"OffPeakWindowOptions">> => off_peak_window_options(),
 %%   <<"SnapshotOptions">> => snapshot_options(),
 %%   <<"SoftwareUpdateOptions">> => software_update_options(),
-%%   <<"TagList">> => list(tag()()),
+%%   <<"TagList">> => list(tag()),
 %%   <<"VPCOptions">> => vpc_options()
 %% }
 -type create_domain_request() :: #{binary() => any()}.
@@ -1123,7 +1124,7 @@
 %% Example:
 %% describe_packages_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"PackageDetailsList">> => list(package_details()())
+%%   <<"PackageDetailsList">> => list(package_details())
 %% }
 -type describe_packages_response() :: #{binary() => any()}.
 
@@ -1134,6 +1135,13 @@
 %%   <<"Value">> => string()
 %% }
 -type tag() :: #{binary() => any()}.
+
+
+%% Example:
+%% s3_vectors_engine() :: #{
+%%   <<"Enabled">> => boolean()
+%% }
+-type s3_vectors_engine() :: #{binary() => any()}.
 
 
 %% Example:
@@ -1193,8 +1201,8 @@
 
 %% Example:
 %% cancel_domain_config_change_response() :: #{
-%%   <<"CancelledChangeIds">> => list(string()()),
-%%   <<"CancelledChangeProperties">> => list(cancelled_change_property()()),
+%%   <<"CancelledChangeIds">> => list(string()),
+%%   <<"CancelledChangeProperties">> => list(cancelled_change_property()),
 %%   <<"DryRun">> => boolean()
 %% }
 -type cancel_domain_config_change_response() :: #{binary() => any()}.
@@ -1211,7 +1219,7 @@
 %% Example:
 %% get_upgrade_history_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"UpgradeHistories">> => list(upgrade_history()())
+%%   <<"UpgradeHistories">> => list(upgrade_history())
 %% }
 -type get_upgrade_history_response() :: #{binary() => any()}.
 
@@ -1286,7 +1294,7 @@
 %% Example:
 %% list_scheduled_actions_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"ScheduledActions">> => list(scheduled_action()())
+%%   <<"ScheduledActions">> => list(scheduled_action())
 %% }
 -type list_scheduled_actions_response() :: #{binary() => any()}.
 
@@ -1330,8 +1338,8 @@
 
 %% Example:
 %% describe_vpc_endpoints_response() :: #{
-%%   <<"VpcEndpointErrors">> => list(vpc_endpoint_error()()),
-%%   <<"VpcEndpoints">> => list(vpc_endpoint()())
+%%   <<"VpcEndpointErrors">> => list(vpc_endpoint_error()),
+%%   <<"VpcEndpoints">> => list(vpc_endpoint())
 %% }
 -type describe_vpc_endpoints_response() :: #{binary() => any()}.
 
@@ -1345,7 +1353,7 @@
 
 %% Example:
 %% list_data_sources_response() :: #{
-%%   <<"DataSources">> => list(data_source_details()())
+%%   <<"DataSources">> => list(data_source_details())
 %% }
 -type list_data_sources_response() :: #{binary() => any()}.
 
@@ -1357,7 +1365,7 @@
 %% Example:
 %% describe_packages_filter() :: #{
 %%   <<"Name">> => list(any()),
-%%   <<"Value">> => list(string()())
+%%   <<"Value">> => list(string())
 %% }
 -type describe_packages_filter() :: #{binary() => any()}.
 
@@ -1411,7 +1419,7 @@
 %% get_package_version_history_response() :: #{
 %%   <<"NextToken">> => string(),
 %%   <<"PackageID">> => string(),
-%%   <<"PackageVersionHistoryList">> => list(package_version_history()())
+%%   <<"PackageVersionHistoryList">> => list(package_version_history())
 %% }
 -type get_package_version_history_response() :: #{binary() => any()}.
 
@@ -1425,12 +1433,12 @@
 
 %% Example:
 %% create_application_request() :: #{
-%%   <<"appConfigs">> => list(app_config()()),
+%%   <<"appConfigs">> => list(app_config()),
 %%   <<"clientToken">> => string(),
-%%   <<"dataSources">> => list(data_source()()),
+%%   <<"dataSources">> => list(data_source()),
 %%   <<"iamIdentityCenterOptions">> => iam_identity_center_options_input(),
 %%   <<"name">> := string(),
-%%   <<"tagList">> => list(tag()())
+%%   <<"tagList">> => list(tag())
 %% }
 -type create_application_request() :: #{binary() => any()}.
 
@@ -1466,7 +1474,7 @@
 %% Example:
 %% describe_reserved_instances_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"ReservedInstances">> => list(reserved_instance()())
+%%   <<"ReservedInstances">> => list(reserved_instance())
 %% }
 -type describe_reserved_instances_response() :: #{binary() => any()}.
 
@@ -1507,14 +1515,14 @@
 
 %% Example:
 %% create_application_response() :: #{
-%%   <<"appConfigs">> => list(app_config()()),
+%%   <<"appConfigs">> => list(app_config()),
 %%   <<"arn">> => string(),
 %%   <<"createdAt">> => non_neg_integer(),
-%%   <<"dataSources">> => list(data_source()()),
+%%   <<"dataSources">> => list(data_source()),
 %%   <<"iamIdentityCenterOptions">> => iam_identity_center_options(),
 %%   <<"id">> => string(),
 %%   <<"name">> => string(),
-%%   <<"tagList">> => list(tag()())
+%%   <<"tagList">> => list(tag())
 %% }
 -type create_application_response() :: #{binary() => any()}.
 
@@ -1522,7 +1530,7 @@
 %% Example:
 %% list_versions_response() :: #{
 %%   <<"NextToken">> => string(),
-%%   <<"Versions">> => list(string()())
+%%   <<"Versions">> => list(string())
 %% }
 -type list_versions_response() :: #{binary() => any()}.
 
@@ -1560,7 +1568,7 @@
 
 %% Example:
 %% list_domain_names_response() :: #{
-%%   <<"DomainNames">> => list(domain_info()())
+%%   <<"DomainNames">> => list(domain_info())
 %% }
 -type list_domain_names_response() :: #{binary() => any()}.
 
@@ -1583,7 +1591,7 @@
 %% Example:
 %% associate_package_request() :: #{
 %%   <<"AssociationConfiguration">> => package_association_configuration(),
-%%   <<"PrerequisitePackageIDList">> => list(string()())
+%%   <<"PrerequisitePackageIDList">> => list(string())
 %% }
 -type associate_package_request() :: #{binary() => any()}.
 
@@ -1591,7 +1599,7 @@
 %% Example:
 %% filter() :: #{
 %%   <<"Name">> => string(),
-%%   <<"Values">> => list(string()())
+%%   <<"Values">> => list(string())
 %% }
 -type filter() :: #{binary() => any()}.
 
@@ -1656,18 +1664,18 @@
 
 %% Example:
 %% update_application_request() :: #{
-%%   <<"appConfigs">> => list(app_config()()),
-%%   <<"dataSources">> => list(data_source()())
+%%   <<"appConfigs">> => list(app_config()),
+%%   <<"dataSources">> => list(data_source())
 %% }
 -type update_application_request() :: #{binary() => any()}.
 
 
 %% Example:
 %% update_application_response() :: #{
-%%   <<"appConfigs">> => list(app_config()()),
+%%   <<"appConfigs">> => list(app_config()),
 %%   <<"arn">> => string(),
 %%   <<"createdAt">> => non_neg_integer(),
-%%   <<"dataSources">> => list(data_source()()),
+%%   <<"dataSources">> => list(data_source()),
 %%   <<"iamIdentityCenterOptions">> => iam_identity_center_options(),
 %%   <<"id">> => string(),
 %%   <<"lastUpdatedAt">> => non_neg_integer(),
@@ -1702,7 +1710,7 @@
 %%   <<"ARN">> => string(),
 %%   <<"DomainId">> => string(),
 %%   <<"EndpointV2">> => string(),
-%%   <<"ModifyingProperties">> => list(modifying_properties()()),
+%%   <<"ModifyingProperties">> => list(modifying_properties()),
 %%   <<"Created">> => boolean(),
 %%   <<"DomainEndpointOptions">> => domain_endpoint_options(),
 %%   <<"EngineVersion">> => string(),
@@ -1765,7 +1773,7 @@
 %% Example:
 %% auto_tune_options_input() :: #{
 %%   <<"DesiredState">> => list(any()),
-%%   <<"MaintenanceSchedules">> => list(auto_tune_maintenance_schedule()()),
+%%   <<"MaintenanceSchedules">> => list(auto_tune_maintenance_schedule()),
 %%   <<"UseOffPeakWindow">> => boolean()
 %% }
 -type auto_tune_options_input() :: #{binary() => any()}.
@@ -1782,10 +1790,10 @@
 
 %% Example:
 %% get_application_response() :: #{
-%%   <<"appConfigs">> => list(app_config()()),
+%%   <<"appConfigs">> => list(app_config()),
 %%   <<"arn">> => string(),
 %%   <<"createdAt">> => non_neg_integer(),
-%%   <<"dataSources">> => list(data_source()()),
+%%   <<"dataSources">> => list(data_source()),
 %%   <<"endpoint">> => string(),
 %%   <<"iamIdentityCenterOptions">> => iam_identity_center_options(),
 %%   <<"id">> => string(),
@@ -1824,7 +1832,7 @@
 %%   <<"FixedPrice">> => float(),
 %%   <<"InstanceType">> => list(any()),
 %%   <<"PaymentOption">> => list(any()),
-%%   <<"RecurringCharges">> => list(recurring_charge()()),
+%%   <<"RecurringCharges">> => list(recurring_charge()),
 %%   <<"ReservedInstanceOfferingId">> => string(),
 %%   <<"UsagePrice">> => float()
 %% }
@@ -1951,7 +1959,7 @@
 %% package_details_for_association() :: #{
 %%   <<"AssociationConfiguration">> => package_association_configuration(),
 %%   <<"PackageID">> => string(),
-%%   <<"PrerequisitePackageIDList">> => list(string()())
+%%   <<"PrerequisitePackageIDList">> => list(string())
 %% }
 -type package_details_for_association() :: #{binary() => any()}.
 
@@ -2054,7 +2062,7 @@
 
 %% Example:
 %% slot_not_available_exception() :: #{
-%%   <<"SlotSuggestions">> => list(float()()),
+%%   <<"SlotSuggestions">> => list(float()),
 %%   <<"message">> => string()
 %% }
 -type slot_not_available_exception() :: #{binary() => any()}.
@@ -2140,7 +2148,7 @@
 %% Example:
 %% auto_tune_options() :: #{
 %%   <<"DesiredState">> => list(any()),
-%%   <<"MaintenanceSchedules">> => list(auto_tune_maintenance_schedule()()),
+%%   <<"MaintenanceSchedules">> => list(auto_tune_maintenance_schedule()),
 %%   <<"RollbackOnDisable">> => list(any()),
 %%   <<"UseOffPeakWindow">> => boolean()
 %% }
@@ -2165,7 +2173,8 @@
 
 %% Example:
 %% a_i_ml_options_input() :: #{
-%%   <<"NaturalLanguageQueryGenerationOptions">> => natural_language_query_generation_options_input()
+%%   <<"NaturalLanguageQueryGenerationOptions">> => natural_language_query_generation_options_input(),
+%%   <<"S3VectorsEngine">> => s3_vectors_engine()
 %% }
 -type a_i_ml_options_input() :: #{binary() => any()}.
 
@@ -2228,9 +2237,9 @@
 
 %% Example:
 %% limits() :: #{
-%%   <<"AdditionalLimits">> => list(additional_limit()()),
+%%   <<"AdditionalLimits">> => list(additional_limit()),
 %%   <<"InstanceLimits">> => instance_limits(),
-%%   <<"StorageTypes">> => list(storage_type()())
+%%   <<"StorageTypes">> => list(storage_type())
 %% }
 -type limits() :: #{binary() => any()}.
 
@@ -2277,22 +2286,22 @@
 
 %% Example:
 %% environment_info() :: #{
-%%   <<"AvailabilityZoneInformation">> => list(availability_zone_info()())
+%%   <<"AvailabilityZoneInformation">> => list(availability_zone_info())
 %% }
 -type environment_info() :: #{binary() => any()}.
 
 
 %% Example:
 %% vpc_options() :: #{
-%%   <<"SecurityGroupIds">> => list(string()()),
-%%   <<"SubnetIds">> => list(string()())
+%%   <<"SecurityGroupIds">> => list(string()),
+%%   <<"SubnetIds">> => list(string())
 %% }
 -type vpc_options() :: #{binary() => any()}.
 
 
 %% Example:
 %% describe_domains_response() :: #{
-%%   <<"DomainStatusList">> => list(domain_status()())
+%%   <<"DomainStatusList">> => list(domain_status())
 %% }
 -type describe_domains_response() :: #{binary() => any()}.
 
@@ -2320,7 +2329,7 @@
 %%   <<"InstanceCount">> => integer(),
 %%   <<"InstanceType">> => list(any()),
 %%   <<"MultiAZWithStandbyEnabled">> => boolean(),
-%%   <<"NodeOptions">> => list(node_option()()),
+%%   <<"NodeOptions">> => list(node_option()),
 %%   <<"WarmCount">> => integer(),
 %%   <<"WarmEnabled">> => boolean(),
 %%   <<"WarmType">> => list(any()),
@@ -2339,7 +2348,7 @@
 
 %% Example:
 %% list_applications_response() :: #{
-%%   <<"ApplicationSummaries">> => list(application_summary()()),
+%%   <<"ApplicationSummaries">> => list(application_summary()),
 %%   <<"nextToken">> => string()
 %% }
 -type list_applications_response() :: #{binary() => any()}.
@@ -2358,8 +2367,8 @@
 %%   <<"DataSourceName">> := string(),
 %%   <<"DataSourceType">> := list(),
 %%   <<"Description">> => string(),
-%%   <<"OpenSearchArns">> := list(string()()),
-%%   <<"TagList">> => list(tag()())
+%%   <<"OpenSearchArns">> := list(string()),
+%%   <<"TagList">> => list(tag())
 %% }
 -type add_direct_query_data_source_request() :: #{binary() => any()}.
 
@@ -2374,7 +2383,7 @@
 
 %% Example:
 %% describe_inbound_connections_request() :: #{
-%%   <<"Filters">> => list(filter()()),
+%%   <<"Filters">> => list(filter()),
 %%   <<"MaxResults">> => integer(),
 %%   <<"NextToken">> => string()
 %% }
@@ -2385,7 +2394,7 @@
 %% update_direct_query_data_source_request() :: #{
 %%   <<"DataSourceType">> := list(),
 %%   <<"Description">> => string(),
-%%   <<"OpenSearchArns">> := list(string()())
+%%   <<"OpenSearchArns">> := list(string())
 %% }
 -type update_direct_query_data_source_request() :: #{binary() => any()}.
 
@@ -2401,7 +2410,7 @@
 %%   <<"PackageName">> => string(),
 %%   <<"PackageType">> => list(any()),
 %%   <<"PackageVersion">> => string(),
-%%   <<"PrerequisitePackageIDList">> => list(string()()),
+%%   <<"PrerequisitePackageIDList">> => list(string()),
 %%   <<"ReferencePath">> => string()
 %% }
 -type domain_package_details() :: #{binary() => any()}.
@@ -2432,7 +2441,7 @@
 %%   <<"InstanceCount">> => integer(),
 %%   <<"InstanceType">> => list(any()),
 %%   <<"PaymentOption">> => list(any()),
-%%   <<"RecurringCharges">> => list(recurring_charge()()),
+%%   <<"RecurringCharges">> => list(recurring_charge()),
 %%   <<"ReservationName">> => string(),
 %%   <<"ReservedInstanceId">> => string(),
 %%   <<"ReservedInstanceOfferingId">> => string(),
@@ -2484,7 +2493,7 @@
 %% Example:
 %% remove_tags_request() :: #{
 %%   <<"ARN">> := string(),
-%%   <<"TagKeys">> := list(string()())
+%%   <<"TagKeys">> := list(string())
 %% }
 -type remove_tags_request() :: #{binary() => any()}.
 
@@ -2492,14 +2501,14 @@
 %% Example:
 %% associate_packages_request() :: #{
 %%   <<"DomainName">> := string(),
-%%   <<"PackageList">> := list(package_details_for_association()())
+%%   <<"PackageList">> := list(package_details_for_association())
 %% }
 -type associate_packages_request() :: #{binary() => any()}.
 
 
 %% Example:
 %% list_domain_maintenances_response() :: #{
-%%   <<"DomainMaintenances">> => list(domain_maintenance_details()()),
+%%   <<"DomainMaintenances">> => list(domain_maintenance_details()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_domain_maintenances_response() :: #{binary() => any()}.
@@ -2538,7 +2547,7 @@
 
 %% Example:
 %% describe_packages_request() :: #{
-%%   <<"Filters">> => list(describe_packages_filter()()),
+%%   <<"Filters">> => list(describe_packages_filter()),
 %%   <<"MaxResults">> => integer(),
 %%   <<"NextToken">> => string()
 %% }
@@ -2554,7 +2563,7 @@
 
 %% Example:
 %% upgrade_step_item() :: #{
-%%   <<"Issues">> => list(string()()),
+%%   <<"Issues">> => list(string()),
 %%   <<"ProgressPercent">> => float(),
 %%   <<"UpgradeStep">> => list(any()),
 %%   <<"UpgradeStepStatus">> => list(any())
@@ -2579,7 +2588,7 @@
 
 %% Example:
 %% list_vpc_endpoint_access_response() :: #{
-%%   <<"AuthorizedPrincipalList">> => list(authorized_principal()()),
+%%   <<"AuthorizedPrincipalList">> => list(authorized_principal()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_vpc_endpoint_access_response() :: #{binary() => any()}.
@@ -2597,7 +2606,7 @@
 
 %% Example:
 %% list_instance_type_details_response() :: #{
-%%   <<"InstanceTypeDetails">> => list(instance_type_details()()),
+%%   <<"InstanceTypeDetails">> => list(instance_type_details()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_instance_type_details_response() :: #{binary() => any()}.
@@ -2675,7 +2684,7 @@
 
 %% Example:
 %% describe_domain_nodes_response() :: #{
-%%   <<"DomainNodesStatusList">> => list(domain_nodes_status()())
+%%   <<"DomainNodesStatusList">> => list(domain_nodes_status())
 %% }
 -type describe_domain_nodes_response() :: #{binary() => any()}.
 
@@ -2705,7 +2714,7 @@
 
 %% Example:
 %% list_domains_for_package_response() :: #{
-%%   <<"DomainPackageDetailsList">> => list(domain_package_details()()),
+%%   <<"DomainPackageDetailsList">> => list(domain_package_details()),
 %%   <<"NextToken">> => string()
 %% }
 -type list_domains_for_package_response() :: #{binary() => any()}.
@@ -2720,7 +2729,7 @@
 
 %% Example:
 %% get_compatible_versions_response() :: #{
-%%   <<"CompatibleVersions">> => list(compatible_versions_map()())
+%%   <<"CompatibleVersions">> => list(compatible_versions_map())
 %% }
 -type get_compatible_versions_response() :: #{binary() => any()}.
 
@@ -2728,7 +2737,7 @@
 %% Example:
 %% dissociate_packages_request() :: #{
 %%   <<"DomainName">> := string(),
-%%   <<"PackageList">> := list(string()())
+%%   <<"PackageList">> := list(string())
 %% }
 -type dissociate_packages_request() :: #{binary() => any()}.
 
@@ -3310,8 +3319,8 @@ accept_inbound_connection(Client, ConnectionId, Input0, Options0) ->
 %% @doc Creates a new direct-query data source to the specified domain.
 %%
 %% For more information, see
-%% Creating Amazon OpenSearch Service data source integrations with Amazon
-%% S3:
+%% Creating Amazon
+%% OpenSearch Service data source integrations with Amazon S3:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html.
 -spec add_data_source(aws_client:aws_client(), binary() | list(), add_data_source_request()) ->
     {ok, add_data_source_response(), tuple()} |
@@ -3346,9 +3355,9 @@ add_data_source(Client, DomainName, Input0, Options0) ->
 
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
-%% @doc
-%% Adds a new data source in Amazon OpenSearch Service
-%% so that you can perform direct queries on external data.
+%% @doc Adds a new data source in Amazon OpenSearch Service so that you can
+%% perform direct queries
+%% on external data.
 -spec add_direct_query_data_source(aws_client:aws_client(), add_direct_query_data_source_request()) ->
     {ok, add_direct_query_data_source_response(), tuple()} |
     {error, any()} |
@@ -3426,8 +3435,7 @@ add_tags(Client, Input0, Options0) ->
 %% @doc Associates a package with an Amazon OpenSearch Service domain.
 %%
 %% For more information, see
-%% Custom packages
-%% for Amazon OpenSearch Service:
+%% Custom packages for Amazon OpenSearch Service:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html.
 -spec associate_package(aws_client:aws_client(), binary() | list(), binary() | list(), associate_package_request()) ->
     {ok, associate_package_response(), tuple()} |
@@ -3463,7 +3471,8 @@ associate_package(Client, DomainName, PackageID, Input0, Options0) ->
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
 %% @doc Operation in the Amazon OpenSearch Service API for associating
-%% multiple packages with a domain simultaneously.
+%% multiple packages with a
+%% domain simultaneously.
 -spec associate_packages(aws_client:aws_client(), associate_packages_request()) ->
     {ok, associate_packages_response(), tuple()} |
     {error, any()} |
@@ -3612,8 +3621,8 @@ cancel_service_software_update(Client, Input0, Options0) ->
 
 %% @doc Creates an OpenSearch UI application.
 %%
-%% For more information, see Using the OpenSearch user interface in Amazon
-%% OpenSearch Service:
+%% For more information, see Using the OpenSearch user
+%% interface in Amazon OpenSearch Service:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application.html.
 -spec create_application(aws_client:aws_client(), create_application_request()) ->
     {ok, create_application_response(), tuple()} |
@@ -3834,8 +3843,8 @@ delete_application(Client, Id, Input0, Options0) ->
 
 %% @doc Deletes a direct-query data source.
 %%
-%% For more information, see Deleting an Amazon OpenSearch Service data
-%% source with Amazon S3:
+%% For more information, see Deleting an Amazon
+%% OpenSearch Service data source with Amazon S3:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-delete.html.
 -spec delete_data_source(aws_client:aws_client(), binary() | list(), binary() | list(), delete_data_source_request()) ->
     {ok, delete_data_source_response(), tuple()} |
@@ -3870,9 +3879,8 @@ delete_data_source(Client, DomainName, Name, Input0, Options0) ->
 
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
-%% @doc
-%% Deletes a previously configured direct query data
-%% source from Amazon OpenSearch Service.
+%% @doc Deletes a previously configured direct query data source from Amazon
+%% OpenSearch Service.
 -spec delete_direct_query_data_source(aws_client:aws_client(), binary() | list(), delete_direct_query_data_source_request()) ->
     {ok, undefined, tuple()} |
     {error, any()} |
@@ -4181,8 +4189,8 @@ describe_domain_auto_tunes(Client, DomainName, QueryMap, HeadersMap, Options0)
 %% on an Amazon
 %% OpenSearch Service domain.
 %%
-%% For more information, see Making configuration changes in Amazon
-%% OpenSearch Service:
+%% For more information, see Making
+%% configuration changes in Amazon OpenSearch Service:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html.
 -spec describe_domain_change_progress(aws_client:aws_client(), binary() | list()) ->
     {ok, describe_domain_change_progress_response(), tuple()} |
@@ -4262,8 +4270,8 @@ describe_domain_config(Client, DomainName, QueryMap, HeadersMap, Options0)
     request(Client, get, Path, Query_, Headers, undefined, Options, SuccessStatusCode).
 
 %% @doc Returns information about domain and node health, the standby
-%% Availability Zone, number of nodes per Availability Zone, and shard count
-%% per node.
+%% Availability Zone, number of
+%% nodes per Availability Zone, and shard count per node.
 -spec describe_domain_health(aws_client:aws_client(), binary() | list()) ->
     {ok, describe_domain_health_response(), tuple()} |
     {error, any()} |
@@ -4377,8 +4385,8 @@ describe_domains(Client, Input0, Options0) ->
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
 %% @doc Describes the progress of a pre-update dry run analysis on an Amazon
-%% OpenSearch
-%% Service domain.
+%% OpenSearch Service
+%% domain.
 %%
 %% For more information, see Determining whether a change will cause a
 %% blue/green deployment:
@@ -4589,7 +4597,8 @@ describe_packages(Client, Input0, Options0) ->
 %% offerings for a given
 %% Region.
 %%
-%% For more information, see Reserved Instances in Amazon OpenSearch Service:
+%% For more information, see Reserved Instances in Amazon OpenSearch
+%% Service:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html.
 -spec describe_reserved_instance_offerings(aws_client:aws_client()) ->
     {ok, describe_reserved_instance_offerings_response(), tuple()} |
@@ -4911,9 +4920,9 @@ get_data_source(Client, DomainName, Name, QueryMap, HeadersMap, Options0)
 
     request(Client, get, Path, Query_, Headers, undefined, Options, SuccessStatusCode).
 
-%% @doc
-%% Returns detailed configuration information for
-%% a specific direct query data source in Amazon OpenSearch Service.
+%% @doc Returns detailed configuration information for a specific direct
+%% query data source in
+%% Amazon OpenSearch Service.
 -spec get_direct_query_data_source(aws_client:aws_client(), binary() | list()) ->
     {ok, get_direct_query_data_source_response(), tuple()} |
     {error, any()} |
@@ -4992,10 +5001,12 @@ get_domain_maintenance_status(Client, DomainName, MaintenanceId, QueryMap, Heade
     request(Client, get, Path, Query_, Headers, undefined, Options, SuccessStatusCode).
 
 %% @doc Returns a list of Amazon OpenSearch Service package versions, along
-%% with their creation time, commit message, and plugin properties (if the
-%% package is a zip plugin package).
+%% with their creation
+%% time, commit message, and plugin properties (if the package is a zip
+%% plugin package).
 %%
-%% For more information, see Custom packages for Amazon
+%% For more
+%% information, see Custom packages for Amazon
 %% OpenSearch Service:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html.
 -spec get_package_version_history(aws_client:aws_client(), binary() | list()) ->
@@ -5167,9 +5178,9 @@ list_applications(Client, QueryMap, HeadersMap, Options0)
 
 %% @doc Lists direct-query data sources for a specific domain.
 %%
-%% For more information, see
-%% For more information, see
-%% Working with Amazon OpenSearch Service direct queries with Amazon S3:
+%% For more information, see For more
+%% information, see Working with Amazon
+%% OpenSearch Service direct queries with Amazon S3:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3.html.
 -spec list_data_sources(aws_client:aws_client(), binary() | list()) ->
     {ok, list_data_sources_response(), tuple()} |
@@ -5207,9 +5218,9 @@ list_data_sources(Client, DomainName, QueryMap, HeadersMap, Options0)
 
     request(Client, get, Path, Query_, Headers, undefined, Options, SuccessStatusCode).
 
-%% @doc
-%% Lists an inventory of all the direct query data sources that you
-%% have configured within Amazon OpenSearch Service.
+%% @doc Lists an inventory of all the direct query data sources that you have
+%% configured within
+%% Amazon OpenSearch Service.
 -spec list_direct_query_data_sources(aws_client:aws_client()) ->
     {ok, list_direct_query_data_sources_response(), tuple()} |
     {error, any()} |
@@ -5898,9 +5909,9 @@ revoke_vpc_endpoint_access(Client, DomainName, Input0, Options0) ->
 
 %% @doc Starts the node maintenance process on the data node.
 %%
-%% These processes can include a node reboot, an Opensearch or Elasticsearch
-%% process restart,
-%% or a Dashboard or Kibana restart.
+%% These processes can include a node
+%% reboot, an Opensearch or Elasticsearch process restart, or a Dashboard or
+%% Kibana restart.
 -spec start_domain_maintenance(aws_client:aws_client(), binary() | list(), start_domain_maintenance_request()) ->
     {ok, start_domain_maintenance_response(), tuple()} |
     {error, any()} |
@@ -6011,9 +6022,8 @@ update_application(Client, Id, Input0, Options0) ->
 
 %% @doc Updates a direct-query data source.
 %%
-%% For more information, see
-%% Working with Amazon OpenSearch Service data source integrations with
-%% Amazon S3:
+%% For more information, see Working with Amazon
+%% OpenSearch Service data source integrations with Amazon S3:
 %% https://docs.aws.amazon.com/opensearch-service/latest/developerguide/direct-query-s3-creating.html.
 -spec update_data_source(aws_client:aws_client(), binary() | list(), binary() | list(), update_data_source_request()) ->
     {ok, update_data_source_response(), tuple()} |
@@ -6048,9 +6058,9 @@ update_data_source(Client, DomainName, Name, Input0, Options0) ->
 
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
-%% @doc
-%% Updates the configuration or properties of an existing
-%% direct query data source in Amazon OpenSearch Service.
+%% @doc Updates the configuration or properties of an existing direct query
+%% data source in Amazon
+%% OpenSearch Service.
 -spec update_direct_query_data_source(aws_client:aws_client(), binary() | list(), update_direct_query_data_source_request()) ->
     {ok, update_direct_query_data_source_response(), tuple()} |
     {error, any()} |
@@ -6085,8 +6095,7 @@ update_direct_query_data_source(Client, DataSourceName, Input0, Options0) ->
     request(Client, Method, Path, Query_, CustomHeaders ++ Headers, Input, Options, SuccessStatusCode).
 
 %% @doc Modifies the cluster configuration of the specified Amazon OpenSearch
-%% Service
-%% domain.
+%% Service domain.
 -spec update_domain_config(aws_client:aws_client(), binary() | list(), update_domain_config_request()) ->
     {ok, update_domain_config_response(), tuple()} |
     {error, any()} |
@@ -6160,7 +6169,8 @@ update_package(Client, Input0, Options0) ->
 
 %% @doc Updates the scope of a package.
 %%
-%% Scope of the package defines users who can view and associate a package.
+%% Scope of the package defines users who can view and
+%% associate a package.
 -spec update_package_scope(aws_client:aws_client(), update_package_scope_request()) ->
     {ok, update_package_scope_response(), tuple()} |
     {error, any()} |

@@ -166,14 +166,20 @@
 
 %% Example:
 %% describe_task_definition_response() :: #{
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> => task_definition()
 %% }
 -type describe_task_definition_response() :: #{binary() => any()}.
 
 %% Example:
+%% service_connect_test_traffic_rules() :: #{
+%%   <<"header">> => service_connect_test_traffic_header_rules()
+%% }
+-type service_connect_test_traffic_rules() :: #{binary() => any()}.
+
+%% Example:
 %% container_instance_health_status() :: #{
-%%   <<"details">> => list(instance_health_check_result()()),
+%%   <<"details">> => list(instance_health_check_result()),
 %%   <<"overallStatus">> => list(any())
 %% }
 -type container_instance_health_status() :: #{binary() => any()}.
@@ -186,8 +192,8 @@
 
 %% Example:
 %% update_container_instances_state_response() :: #{
-%%   <<"containerInstances">> => list(container_instance()()),
-%%   <<"failures">> => list(failure()())
+%%   <<"containerInstances">> => list(container_instance()),
+%%   <<"failures">> => list(failure())
 %% }
 -type update_container_instances_state_response() :: #{binary() => any()}.
 
@@ -204,7 +210,7 @@
 
 %% Example:
 %% task_set() :: #{
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clusterArn">> => string(),
 %%   <<"computedDesiredCount">> => integer(),
 %%   <<"createdAt">> => non_neg_integer(),
@@ -212,7 +218,7 @@
 %%   <<"fargateEphemeralStorage">> => deployment_ephemeral_storage(),
 %%   <<"id">> => string(),
 %%   <<"launchType">> => list(any()),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
 %%   <<"pendingCount">> => integer(),
 %%   <<"platformFamily">> => string(),
@@ -220,12 +226,12 @@
 %%   <<"runningCount">> => integer(),
 %%   <<"scale">> => scale(),
 %%   <<"serviceArn">> => string(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
 %%   <<"stabilityStatus">> => list(any()),
 %%   <<"stabilityStatusAt">> => non_neg_integer(),
 %%   <<"startedBy">> => string(),
 %%   <<"status">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> => string(),
 %%   <<"taskSetArn">> => string(),
 %%   <<"updatedAt">> => non_neg_integer()
@@ -235,8 +241,8 @@
 %% Example:
 %% task() :: #{
 %%   <<"healthStatus">> => list(any()),
-%%   <<"containers">> => list(container()()),
-%%   <<"attachments">> => list(attachment()()),
+%%   <<"containers">> => list(container()),
+%%   <<"attachments">> => list(attachment()),
 %%   <<"taskDefinitionArn">> => string(),
 %%   <<"stoppedReason">> => string(),
 %%   <<"pullStoppedAt">> => non_neg_integer(),
@@ -252,7 +258,7 @@
 %%   <<"ephemeralStorage">> => ephemeral_storage(),
 %%   <<"containerInstanceArn">> => string(),
 %%   <<"overrides">> => task_override(),
-%%   <<"attributes">> => list(attribute()()),
+%%   <<"attributes">> => list(attribute()),
 %%   <<"pullStartedAt">> => non_neg_integer(),
 %%   <<"stopCode">> => list(any()),
 %%   <<"version">> => float(),
@@ -260,7 +266,7 @@
 %%   <<"launchType">> => list(any()),
 %%   <<"capacityProviderName">> => string(),
 %%   <<"cpu">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"lastStatus">> => string(),
 %%   <<"taskArn">> => string(),
 %%   <<"connectivityAt">> => non_neg_integer(),
@@ -268,7 +274,7 @@
 %%   <<"createdAt">> => non_neg_integer(),
 %%   <<"group">> => string(),
 %%   <<"startedBy">> => string(),
-%%   <<"inferenceAccelerators">> => list(inference_accelerator()()),
+%%   <<"inferenceAccelerators">> => list(inference_accelerator()),
 %%   <<"fargateEphemeralStorage">> => task_ephemeral_storage(),
 %%   <<"startedAt">> => non_neg_integer()
 %% }
@@ -283,7 +289,7 @@
 %% Example:
 %% tag_resource_request() :: #{
 %%   <<"resourceArn">> := string(),
-%%   <<"tags">> := list(tag()())
+%%   <<"tags">> := list(tag())
 %% }
 -type tag_resource_request() :: #{binary() => any()}.
 
@@ -304,7 +310,7 @@
 %% Example:
 %% describe_container_instances_request() :: #{
 %%   <<"cluster">> => string(),
-%%   <<"containerInstances">> := list(string()()),
+%%   <<"containerInstances">> := list(string()),
 %%   <<"include">> => list(list(any())())
 %% }
 -type describe_container_instances_request() :: #{binary() => any()}.
@@ -321,17 +327,17 @@
 %%   <<"containerArn">> => string(),
 %%   <<"cpu">> => string(),
 %%   <<"exitCode">> => integer(),
-%%   <<"gpuIds">> => list(string()()),
+%%   <<"gpuIds">> => list(string()),
 %%   <<"healthStatus">> => list(any()),
 %%   <<"image">> => string(),
 %%   <<"imageDigest">> => string(),
 %%   <<"lastStatus">> => string(),
-%%   <<"managedAgents">> => list(managed_agent()()),
+%%   <<"managedAgents">> => list(managed_agent()),
 %%   <<"memory">> => string(),
 %%   <<"memoryReservation">> => string(),
 %%   <<"name">> => string(),
-%%   <<"networkBindings">> => list(network_binding()()),
-%%   <<"networkInterfaces">> => list(network_interface()()),
+%%   <<"networkBindings">> => list(network_binding()),
+%%   <<"networkInterfaces">> => list(network_interface()),
 %%   <<"reason">> => string(),
 %%   <<"runtimeId">> => string(),
 %%   <<"taskArn">> => string()
@@ -355,15 +361,15 @@
 
 %% Example:
 %% run_task_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"tasks">> => list(task()())
+%%   <<"failures">> => list(failure()),
+%%   <<"tasks">> => list(task())
 %% }
 -type run_task_response() :: #{binary() => any()}.
 
 %% Example:
 %% proxy_configuration() :: #{
 %%   <<"containerName">> => string(),
-%%   <<"properties">> => list(key_value_pair()()),
+%%   <<"properties">> => list(key_value_pair()),
 %%   <<"type">> => list(any())
 %% }
 -type proxy_configuration() :: #{binary() => any()}.
@@ -385,7 +391,7 @@
 
 %% Example:
 %% deployment() :: #{
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"createdAt">> => non_neg_integer(),
 %%   <<"desiredCount">> => integer(),
 %%   <<"failedTasks">> => integer(),
@@ -400,12 +406,12 @@
 %%   <<"rolloutStateReason">> => string(),
 %%   <<"runningCount">> => integer(),
 %%   <<"serviceConnectConfiguration">> => service_connect_configuration(),
-%%   <<"serviceConnectResources">> => list(service_connect_service_resource()()),
+%%   <<"serviceConnectResources">> => list(service_connect_service_resource()),
 %%   <<"status">> => string(),
 %%   <<"taskDefinition">> => string(),
 %%   <<"updatedAt">> => non_neg_integer(),
-%%   <<"volumeConfigurations">> => list(service_volume_configuration()()),
-%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration()())
+%%   <<"volumeConfigurations">> => list(service_volume_configuration()),
+%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration())
 %% }
 -type deployment() :: #{binary() => any()}.
 
@@ -421,7 +427,7 @@
 %% describe_services_request() :: #{
 %%   <<"cluster">> => string(),
 %%   <<"include">> => list(list(any())()),
-%%   <<"services">> := list(string()())
+%%   <<"services">> := list(string())
 %% }
 -type describe_services_request() :: #{binary() => any()}.
 
@@ -440,11 +446,11 @@
 
 %% Example:
 %% task_override() :: #{
-%%   <<"containerOverrides">> => list(container_override()()),
+%%   <<"containerOverrides">> => list(container_override()),
 %%   <<"cpu">> => string(),
 %%   <<"ephemeralStorage">> => ephemeral_storage(),
 %%   <<"executionRoleArn">> => string(),
-%%   <<"inferenceAcceleratorOverrides">> => list(inference_accelerator_override()()),
+%%   <<"inferenceAcceleratorOverrides">> => list(inference_accelerator_override()),
 %%   <<"memory">> => string(),
 %%   <<"taskRoleArn">> => string()
 %% }
@@ -452,8 +458,8 @@
 
 %% Example:
 %% describe_service_deployments_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"serviceDeployments">> => list(service_deployment()())
+%%   <<"failures">> => list(failure()),
+%%   <<"serviceDeployments">> => list(service_deployment())
 %% }
 -type describe_service_deployments_response() :: #{binary() => any()}.
 
@@ -484,18 +490,18 @@
 
 %% Example:
 %% create_task_set_request() :: #{
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clientToken">> => string(),
 %%   <<"cluster">> := string(),
 %%   <<"externalId">> => string(),
 %%   <<"launchType">> => list(any()),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
 %%   <<"platformVersion">> => string(),
 %%   <<"scale">> => scale(),
 %%   <<"service">> := string(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
-%%   <<"tags">> => list(tag()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> := string()
 %% }
 -type create_task_set_request() :: #{binary() => any()}.
@@ -503,7 +509,7 @@
 %% Example:
 %% start_task_request() :: #{
 %%   <<"cluster">> => string(),
-%%   <<"containerInstances">> := list(string()()),
+%%   <<"containerInstances">> := list(string()),
 %%   <<"enableECSManagedTags">> => boolean(),
 %%   <<"enableExecuteCommand">> => boolean(),
 %%   <<"group">> => string(),
@@ -512,9 +518,9 @@
 %%   <<"propagateTags">> => list(any()),
 %%   <<"referenceId">> => string(),
 %%   <<"startedBy">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> := string(),
-%%   <<"volumeConfigurations">> => list(task_volume_configuration()())
+%%   <<"volumeConfigurations">> => list(task_volume_configuration())
 %% }
 -type start_task_request() :: #{binary() => any()}.
 
@@ -547,8 +553,8 @@
 
 %% Example:
 %% get_task_protection_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"protectedTasks">> => list(protected_task()())
+%%   <<"failures">> => list(failure()),
+%%   <<"protectedTasks">> => list(protected_task())
 %% }
 -type get_task_protection_response() :: #{binary() => any()}.
 
@@ -604,7 +610,7 @@
 
 %% Example:
 %% attachment() :: #{
-%%   <<"details">> => list(key_value_pair()()),
+%%   <<"details">> => list(key_value_pair()),
 %%   <<"id">> => string(),
 %%   <<"status">> => string(),
 %%   <<"type">> => string()
@@ -635,24 +641,24 @@
 %% Example:
 %% service() :: #{
 %%   <<"availabilityZoneRebalancing">> => list(any()),
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clusterArn">> => string(),
 %%   <<"createdAt">> => non_neg_integer(),
 %%   <<"createdBy">> => string(),
 %%   <<"deploymentConfiguration">> => deployment_configuration(),
 %%   <<"deploymentController">> => deployment_controller(),
-%%   <<"deployments">> => list(deployment()()),
+%%   <<"deployments">> => list(deployment()),
 %%   <<"desiredCount">> => integer(),
 %%   <<"enableECSManagedTags">> => boolean(),
 %%   <<"enableExecuteCommand">> => boolean(),
-%%   <<"events">> => list(service_event()()),
+%%   <<"events">> => list(service_event()),
 %%   <<"healthCheckGracePeriodSeconds">> => integer(),
 %%   <<"launchType">> => list(any()),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
 %%   <<"pendingCount">> => integer(),
-%%   <<"placementConstraints">> => list(placement_constraint()()),
-%%   <<"placementStrategy">> => list(placement_strategy()()),
+%%   <<"placementConstraints">> => list(placement_constraint()),
+%%   <<"placementStrategy">> => list(placement_strategy()),
 %%   <<"platformFamily">> => string(),
 %%   <<"platformVersion">> => string(),
 %%   <<"propagateTags">> => list(any()),
@@ -661,11 +667,11 @@
 %%   <<"schedulingStrategy">> => list(any()),
 %%   <<"serviceArn">> => string(),
 %%   <<"serviceName">> => string(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
 %%   <<"status">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> => string(),
-%%   <<"taskSets">> => list(task_set()())
+%%   <<"taskSets">> => list(task_set())
 %% }
 -type service() :: #{binary() => any()}.
 
@@ -719,7 +725,7 @@
 %% Example:
 %% untag_resource_request() :: #{
 %%   <<"resourceArn">> := string(),
-%%   <<"tagKeys">> := list(string()())
+%%   <<"tagKeys">> := list(string())
 %% }
 -type untag_resource_request() :: #{binary() => any()}.
 
@@ -732,7 +738,7 @@
 %% Example:
 %% update_container_instances_state_request() :: #{
 %%   <<"cluster">> => string(),
-%%   <<"containerInstances">> := list(string()()),
+%%   <<"containerInstances">> := list(string()),
 %%   <<"status">> := list(any())
 %% }
 -type update_container_instances_state_request() :: #{binary() => any()}.
@@ -752,7 +758,7 @@
 %%   <<"cluster">> := string(),
 %%   <<"expiresInMinutes">> => integer(),
 %%   <<"protectionEnabled">> := boolean(),
-%%   <<"tasks">> := list(string()())
+%%   <<"tasks">> := list(string())
 %% }
 -type update_task_protection_request() :: #{binary() => any()}.
 
@@ -761,20 +767,20 @@
 %%   <<"cluster">> := string(),
 %%   <<"configuration">> => cluster_configuration(),
 %%   <<"serviceConnectDefaults">> => cluster_service_connect_defaults_request(),
-%%   <<"settings">> => list(cluster_setting()())
+%%   <<"settings">> => list(cluster_setting())
 %% }
 -type update_cluster_request() :: #{binary() => any()}.
 
 %% Example:
 %% register_container_instance_request() :: #{
-%%   <<"attributes">> => list(attribute()()),
+%%   <<"attributes">> => list(attribute()),
 %%   <<"cluster">> => string(),
 %%   <<"containerInstanceArn">> => string(),
 %%   <<"instanceIdentityDocument">> => string(),
 %%   <<"instanceIdentityDocumentSignature">> => string(),
-%%   <<"platformDevices">> => list(platform_device()()),
-%%   <<"tags">> => list(tag()()),
-%%   <<"totalResources">> => list(resource()()),
+%%   <<"platformDevices">> => list(platform_device()),
+%%   <<"tags">> => list(tag()),
+%%   <<"totalResources">> => list(resource()),
 %%   <<"versionInfo">> => version_info()
 %% }
 -type register_container_instance_request() :: #{binary() => any()}.
@@ -812,7 +818,7 @@
 
 %% Example:
 %% deployment_alarms() :: #{
-%%   <<"alarmNames">> => list(string()()),
+%%   <<"alarmNames">> => list(string()),
 %%   <<"enable">> => boolean(),
 %%   <<"rollback">> => boolean()
 %% }
@@ -849,8 +855,8 @@
 
 %% Example:
 %% describe_services_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"services">> => list(service()())
+%%   <<"failures">> => list(failure()),
+%%   <<"services">> => list(service())
 %% }
 -type describe_services_response() :: #{binary() => any()}.
 
@@ -881,9 +887,12 @@
 %% Example:
 %% deployment_configuration() :: #{
 %%   <<"alarms">> => deployment_alarms(),
+%%   <<"bakeTimeInMinutes">> => integer(),
 %%   <<"deploymentCircuitBreaker">> => deployment_circuit_breaker(),
+%%   <<"lifecycleHooks">> => list(deployment_lifecycle_hook()),
 %%   <<"maximumPercent">> => integer(),
-%%   <<"minimumHealthyPercent">> => integer()
+%%   <<"minimumHealthyPercent">> => integer(),
+%%   <<"strategy">> => list(any())
 %% }
 -type deployment_configuration() :: #{binary() => any()}.
 
@@ -901,7 +910,7 @@
 %% Example:
 %% list_account_settings_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"settings">> => list(setting()())
+%%   <<"settings">> => list(setting())
 %% }
 -type list_account_settings_response() :: #{binary() => any()}.
 
@@ -914,21 +923,27 @@
 -type rollback() :: #{binary() => any()}.
 
 %% Example:
+%% service_connect_test_traffic_header_match_rules() :: #{
+%%   <<"exact">> => string()
+%% }
+-type service_connect_test_traffic_header_match_rules() :: #{binary() => any()}.
+
+%% Example:
 %% create_cluster_request() :: #{
-%%   <<"capacityProviders">> => list(string()()),
+%%   <<"capacityProviders">> => list(string()),
 %%   <<"clusterName">> => string(),
 %%   <<"configuration">> => cluster_configuration(),
-%%   <<"defaultCapacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"defaultCapacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"serviceConnectDefaults">> => cluster_service_connect_defaults_request(),
-%%   <<"settings">> => list(cluster_setting()()),
-%%   <<"tags">> => list(tag()())
+%%   <<"settings">> => list(cluster_setting()),
+%%   <<"tags">> => list(tag())
 %% }
 -type create_cluster_request() :: #{binary() => any()}.
 
 %% Example:
 %% container_restart_policy() :: #{
 %%   <<"enabled">> => boolean(),
-%%   <<"ignoredExitCodes">> => list(integer()()),
+%%   <<"ignoredExitCodes">> => list(integer()),
 %%   <<"restartAttemptPeriod">> => integer()
 %% }
 -type container_restart_policy() :: #{binary() => any()}.
@@ -936,7 +951,7 @@
 %% Example:
 %% list_service_deployments_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"serviceDeployments">> => list(service_deployment_brief()())
+%%   <<"serviceDeployments">> => list(service_deployment_brief())
 %% }
 -type list_service_deployments_response() :: #{binary() => any()}.
 
@@ -945,7 +960,7 @@
 %%   <<"enabled">> => boolean(),
 %%   <<"logConfiguration">> => log_configuration(),
 %%   <<"namespace">> => string(),
-%%   <<"services">> => list(service_connect_service()())
+%%   <<"services">> => list(service_connect_service())
 %% }
 -type service_connect_configuration() :: #{binary() => any()}.
 
@@ -957,7 +972,7 @@
 
 %% Example:
 %% describe_capacity_providers_request() :: #{
-%%   <<"capacityProviders">> => list(string()()),
+%%   <<"capacityProviders">> => list(string()),
 %%   <<"include">> => list(list(any())()),
 %%   <<"maxResults">> => integer(),
 %%   <<"nextToken">> => string()
@@ -967,7 +982,7 @@
 %% Example:
 %% conflict_exception() :: #{
 %%   <<"message">> => string(),
-%%   <<"resourceIds">> => list(string()())
+%%   <<"resourceIds">> => list(string())
 %% }
 -type conflict_exception() :: #{binary() => any()}.
 
@@ -982,39 +997,39 @@
 %%   <<"pseudoTerminal">> => boolean(),
 %%   <<"essential">> => boolean(),
 %%   <<"hostname">> => string(),
-%%   <<"links">> => list(string()()),
-%%   <<"secrets">> => list(secret()()),
-%%   <<"portMappings">> => list(port_mapping()()),
-%%   <<"entryPoint">> => list(string()()),
-%%   <<"environment">> => list(key_value_pair()()),
-%%   <<"environmentFiles">> => list(environment_file()()),
+%%   <<"links">> => list(string()),
+%%   <<"secrets">> => list(secret()),
+%%   <<"portMappings">> => list(port_mapping()),
+%%   <<"entryPoint">> => list(string()),
+%%   <<"environment">> => list(key_value_pair()),
+%%   <<"environmentFiles">> => list(environment_file()),
 %%   <<"readonlyRootFilesystem">> => boolean(),
-%%   <<"resourceRequirements">> => list(resource_requirement()()),
-%%   <<"dockerSecurityOptions">> => list(string()()),
-%%   <<"dnsSearchDomains">> => list(string()()),
-%%   <<"volumesFrom">> => list(volume_from()()),
+%%   <<"resourceRequirements">> => list(resource_requirement()),
+%%   <<"dockerSecurityOptions">> => list(string()),
+%%   <<"dnsSearchDomains">> => list(string()),
+%%   <<"volumesFrom">> => list(volume_from()),
 %%   <<"interactive">> => boolean(),
 %%   <<"privileged">> => boolean(),
 %%   <<"stopTimeout">> => integer(),
 %%   <<"logConfiguration">> => log_configuration(),
-%%   <<"dependsOn">> => list(container_dependency()()),
-%%   <<"ulimits">> => list(ulimit()()),
+%%   <<"dependsOn">> => list(container_dependency()),
+%%   <<"ulimits">> => list(ulimit()),
 %%   <<"cpu">> => integer(),
-%%   <<"mountPoints">> => list(mount_point()()),
+%%   <<"mountPoints">> => list(mount_point()),
 %%   <<"memoryReservation">> => integer(),
-%%   <<"dnsServers">> => list(string()()),
-%%   <<"extraHosts">> => list(host_entry()()),
+%%   <<"dnsServers">> => list(string()),
+%%   <<"extraHosts">> => list(host_entry()),
 %%   <<"memory">> => integer(),
-%%   <<"command">> => list(string()()),
+%%   <<"command">> => list(string()),
 %%   <<"linuxParameters">> => linux_parameters(),
 %%   <<"firelensConfiguration">> => firelens_configuration(),
 %%   <<"healthCheck">> => health_check(),
 %%   <<"restartPolicy">> => container_restart_policy(),
-%%   <<"systemControls">> => list(system_control()()),
+%%   <<"systemControls">> => list(system_control()),
 %%   <<"workingDirectory">> => string(),
 %%   <<"versionConsistency">> => list(any()),
 %%   <<"startTimeout">> => integer(),
-%%   <<"credentialSpecs">> => list(string()()),
+%%   <<"credentialSpecs">> => list(string()),
 %%   <<"repositoryCredentials">> => repository_credentials(),
 %%   <<"dockerLabels">> => map(),
 %%   <<"image">> => string(),
@@ -1042,7 +1057,7 @@
 %% Example:
 %% get_task_protection_request() :: #{
 %%   <<"cluster">> := string(),
-%%   <<"tasks">> => list(string()())
+%%   <<"tasks">> => list(string())
 %% }
 -type get_task_protection_request() :: #{binary() => any()}.
 
@@ -1062,20 +1077,20 @@
 %% Example:
 %% list_task_definitions_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"taskDefinitionArns">> => list(string()())
+%%   <<"taskDefinitionArns">> => list(string())
 %% }
 -type list_task_definitions_response() :: #{binary() => any()}.
 
 %% Example:
 %% container_override() :: #{
-%%   <<"command">> => list(string()()),
+%%   <<"command">> => list(string()),
 %%   <<"cpu">> => integer(),
-%%   <<"environment">> => list(key_value_pair()()),
-%%   <<"environmentFiles">> => list(environment_file()()),
+%%   <<"environment">> => list(key_value_pair()),
+%%   <<"environmentFiles">> => list(environment_file()),
 %%   <<"memory">> => integer(),
 %%   <<"memoryReservation">> => integer(),
 %%   <<"name">> => string(),
-%%   <<"resourceRequirements">> => list(resource_requirement()())
+%%   <<"resourceRequirements">> => list(resource_requirement())
 %% }
 -type container_override() :: #{binary() => any()}.
 
@@ -1100,23 +1115,32 @@
 %% Example:
 %% cluster() :: #{
 %%   <<"activeServicesCount">> => integer(),
-%%   <<"attachments">> => list(attachment()()),
+%%   <<"attachments">> => list(attachment()),
 %%   <<"attachmentsStatus">> => string(),
-%%   <<"capacityProviders">> => list(string()()),
+%%   <<"capacityProviders">> => list(string()),
 %%   <<"clusterArn">> => string(),
 %%   <<"clusterName">> => string(),
 %%   <<"configuration">> => cluster_configuration(),
-%%   <<"defaultCapacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"defaultCapacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"pendingTasksCount">> => integer(),
 %%   <<"registeredContainerInstancesCount">> => integer(),
 %%   <<"runningTasksCount">> => integer(),
 %%   <<"serviceConnectDefaults">> => cluster_service_connect_defaults(),
-%%   <<"settings">> => list(cluster_setting()()),
-%%   <<"statistics">> => list(key_value_pair()()),
+%%   <<"settings">> => list(cluster_setting()),
+%%   <<"statistics">> => list(key_value_pair()),
 %%   <<"status">> => string(),
-%%   <<"tags">> => list(tag()())
+%%   <<"tags">> => list(tag())
 %% }
 -type cluster() :: #{binary() => any()}.
+
+%% Example:
+%% deployment_lifecycle_hook() :: #{
+%%   <<"hookDetails">> => any(),
+%%   <<"hookTargetArn">> => string(),
+%%   <<"lifecycleStages">> => list(list(any())()),
+%%   <<"roleArn">> => string()
+%% }
+-type deployment_lifecycle_hook() :: #{binary() => any()}.
 
 %% Example:
 %% attachment_state_change() :: #{
@@ -1128,22 +1152,22 @@
 %% Example:
 %% list_services_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"serviceArns">> => list(string()())
+%%   <<"serviceArns">> => list(string())
 %% }
 -type list_services_response() :: #{binary() => any()}.
 
 %% Example:
 %% describe_service_revisions_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"serviceRevisions">> => list(service_revision()())
+%%   <<"failures">> => list(failure()),
+%%   <<"serviceRevisions">> => list(service_revision())
 %% }
 -type describe_service_revisions_response() :: #{binary() => any()}.
 
 %% Example:
 %% service_deployment_alarms() :: #{
-%%   <<"alarmNames">> => list(string()()),
+%%   <<"alarmNames">> => list(string()),
 %%   <<"status">> => list(any()),
-%%   <<"triggeredAlarmNames">> => list(string()())
+%%   <<"triggeredAlarmNames">> => list(string())
 %% }
 -type service_deployment_alarms() :: #{binary() => any()}.
 
@@ -1162,7 +1186,7 @@
 
 %% Example:
 %% delete_task_definitions_request() :: #{
-%%   <<"taskDefinitions">> := list(string()())
+%%   <<"taskDefinitions">> := list(string())
 %% }
 -type delete_task_definitions_request() :: #{binary() => any()}.
 
@@ -1171,7 +1195,7 @@
 %%   <<"cluster">> := string(),
 %%   <<"include">> => list(list(any())()),
 %%   <<"service">> := string(),
-%%   <<"taskSets">> => list(string()())
+%%   <<"taskSets">> => list(string())
 %% }
 -type describe_task_sets_request() :: #{binary() => any()}.
 
@@ -1180,7 +1204,7 @@
 %%   <<"cluster">> => string(),
 %%   <<"containerName">> => string(),
 %%   <<"exitCode">> => integer(),
-%%   <<"networkBindings">> => list(network_binding()()),
+%%   <<"networkBindings">> => list(network_binding()),
 %%   <<"reason">> => string(),
 %%   <<"runtimeId">> => string(),
 %%   <<"status">> => string(),
@@ -1191,7 +1215,7 @@
 %% Example:
 %% create_service_request() :: #{
 %%   <<"availabilityZoneRebalancing">> => list(any()),
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clientToken">> => string(),
 %%   <<"cluster">> => string(),
 %%   <<"deploymentConfiguration">> => deployment_configuration(),
@@ -1201,21 +1225,21 @@
 %%   <<"enableExecuteCommand">> => boolean(),
 %%   <<"healthCheckGracePeriodSeconds">> => integer(),
 %%   <<"launchType">> => list(any()),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
-%%   <<"placementConstraints">> => list(placement_constraint()()),
-%%   <<"placementStrategy">> => list(placement_strategy()()),
+%%   <<"placementConstraints">> => list(placement_constraint()),
+%%   <<"placementStrategy">> => list(placement_strategy()),
 %%   <<"platformVersion">> => string(),
 %%   <<"propagateTags">> => list(any()),
 %%   <<"role">> => string(),
 %%   <<"schedulingStrategy">> => list(any()),
 %%   <<"serviceConnectConfiguration">> => service_connect_configuration(),
 %%   <<"serviceName">> := string(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
-%%   <<"tags">> => list(tag()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> => string(),
-%%   <<"volumeConfigurations">> => list(service_volume_configuration()()),
-%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration()())
+%%   <<"volumeConfigurations">> => list(service_volume_configuration()),
+%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration())
 %% }
 -type create_service_request() :: #{binary() => any()}.
 
@@ -1228,7 +1252,7 @@
 
 %% Example:
 %% list_task_definition_families_response() :: #{
-%%   <<"families">> => list(string()()),
+%%   <<"families">> => list(string()),
 %%   <<"nextToken">> => string()
 %% }
 -type list_task_definition_families_response() :: #{binary() => any()}.
@@ -1249,14 +1273,14 @@
 
 %% Example:
 %% delete_attributes_response() :: #{
-%%   <<"attributes">> => list(attribute()())
+%%   <<"attributes">> => list(attribute())
 %% }
 -type delete_attributes_response() :: #{binary() => any()}.
 
 %% Example:
 %% describe_tasks_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"tasks">> => list(task()())
+%%   <<"failures">> => list(failure()),
+%%   <<"tasks">> => list(task())
 %% }
 -type describe_tasks_response() :: #{binary() => any()}.
 
@@ -1269,8 +1293,8 @@
 
 %% Example:
 %% describe_container_instances_response() :: #{
-%%   <<"containerInstances">> => list(container_instance()()),
-%%   <<"failures">> => list(failure()())
+%%   <<"containerInstances">> => list(container_instance()),
+%%   <<"failures">> => list(failure())
 %% }
 -type describe_container_instances_response() :: #{binary() => any()}.
 
@@ -1279,7 +1303,7 @@
 %%   <<"containerName">> => string(),
 %%   <<"exitCode">> => integer(),
 %%   <<"imageDigest">> => string(),
-%%   <<"networkBindings">> => list(network_binding()()),
+%%   <<"networkBindings">> => list(network_binding()),
 %%   <<"reason">> => string(),
 %%   <<"runtimeId">> => string(),
 %%   <<"status">> => string()
@@ -1295,15 +1319,15 @@
 
 %% Example:
 %% put_cluster_capacity_providers_request() :: #{
-%%   <<"capacityProviders">> := list(string()()),
+%%   <<"capacityProviders">> := list(string()),
 %%   <<"cluster">> := string(),
-%%   <<"defaultCapacityProviderStrategy">> := list(capacity_provider_strategy_item()())
+%%   <<"defaultCapacityProviderStrategy">> := list(capacity_provider_strategy_item())
 %% }
 -type put_cluster_capacity_providers_request() :: #{binary() => any()}.
 
 %% Example:
 %% list_tags_for_resource_response() :: #{
-%%   <<"tags">> => list(tag()())
+%%   <<"tags">> => list(tag())
 %% }
 -type list_tags_for_resource_response() :: #{binary() => any()}.
 
@@ -1343,10 +1367,11 @@
 %%   <<"deploymentCircuitBreaker">> => service_deployment_circuit_breaker(),
 %%   <<"deploymentConfiguration">> => deployment_configuration(),
 %%   <<"finishedAt">> => non_neg_integer(),
+%%   <<"lifecycleStage">> => list(any()),
 %%   <<"rollback">> => rollback(),
 %%   <<"serviceArn">> => string(),
 %%   <<"serviceDeploymentArn">> => string(),
-%%   <<"sourceServiceRevisions">> => list(service_revision_summary()()),
+%%   <<"sourceServiceRevisions">> => list(service_revision_summary()),
 %%   <<"startedAt">> => non_neg_integer(),
 %%   <<"status">> => list(any()),
 %%   <<"statusReason">> => string(),
@@ -1358,8 +1383,8 @@
 
 %% Example:
 %% describe_task_sets_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"taskSets">> => list(task_set()())
+%%   <<"failures">> => list(failure()),
+%%   <<"taskSets">> => list(task_set())
 %% }
 -type describe_task_sets_response() :: #{binary() => any()}.
 
@@ -1383,11 +1408,11 @@
 
 %% Example:
 %% submit_task_state_change_request() :: #{
-%%   <<"attachments">> => list(attachment_state_change()()),
+%%   <<"attachments">> => list(attachment_state_change()),
 %%   <<"cluster">> => string(),
-%%   <<"containers">> => list(container_state_change()()),
+%%   <<"containers">> => list(container_state_change()),
 %%   <<"executionStoppedAt">> => non_neg_integer(),
-%%   <<"managedAgents">> => list(managed_agent_state_change()()),
+%%   <<"managedAgents">> => list(managed_agent_state_change()),
 %%   <<"pullStartedAt">> => non_neg_integer(),
 %%   <<"pullStoppedAt">> => non_neg_integer(),
 %%   <<"reason">> => string(),
@@ -1398,7 +1423,7 @@
 
 %% Example:
 %% health_check() :: #{
-%%   <<"command">> => list(string()()),
+%%   <<"command">> => list(string()),
 %%   <<"interval">> => integer(),
 %%   <<"retries">> => integer(),
 %%   <<"startPeriod">> => integer(),
@@ -1427,7 +1452,7 @@
 
 %% Example:
 %% list_clusters_response() :: #{
-%%   <<"clusterArns">> => list(string()()),
+%%   <<"clusterArns">> => list(string()),
 %%   <<"nextToken">> => string()
 %% }
 -type list_clusters_response() :: #{binary() => any()}.
@@ -1466,43 +1491,43 @@
 
 %% Example:
 %% put_attributes_response() :: #{
-%%   <<"attributes">> => list(attribute()())
+%%   <<"attributes">> => list(attribute())
 %% }
 -type put_attributes_response() :: #{binary() => any()}.
 
 %% Example:
 %% task_definition() :: #{
 %%   <<"compatibilities">> => list(list(any())()),
-%%   <<"containerDefinitions">> => list(container_definition()()),
+%%   <<"containerDefinitions">> => list(container_definition()),
 %%   <<"cpu">> => string(),
 %%   <<"deregisteredAt">> => non_neg_integer(),
 %%   <<"enableFaultInjection">> => boolean(),
 %%   <<"ephemeralStorage">> => ephemeral_storage(),
 %%   <<"executionRoleArn">> => string(),
 %%   <<"family">> => string(),
-%%   <<"inferenceAccelerators">> => list(inference_accelerator()()),
+%%   <<"inferenceAccelerators">> => list(inference_accelerator()),
 %%   <<"ipcMode">> => list(any()),
 %%   <<"memory">> => string(),
 %%   <<"networkMode">> => list(any()),
 %%   <<"pidMode">> => list(any()),
-%%   <<"placementConstraints">> => list(task_definition_placement_constraint()()),
+%%   <<"placementConstraints">> => list(task_definition_placement_constraint()),
 %%   <<"proxyConfiguration">> => proxy_configuration(),
 %%   <<"registeredAt">> => non_neg_integer(),
 %%   <<"registeredBy">> => string(),
-%%   <<"requiresAttributes">> => list(attribute()()),
+%%   <<"requiresAttributes">> => list(attribute()),
 %%   <<"requiresCompatibilities">> => list(list(any())()),
 %%   <<"revision">> => integer(),
 %%   <<"runtimePlatform">> => runtime_platform(),
 %%   <<"status">> => list(any()),
 %%   <<"taskDefinitionArn">> => string(),
 %%   <<"taskRoleArn">> => string(),
-%%   <<"volumes">> => list(volume()())
+%%   <<"volumes">> => list(volume())
 %% }
 -type task_definition() :: #{binary() => any()}.
 
 %% Example:
 %% list_container_instances_response() :: #{
-%%   <<"containerInstanceArns">> => list(string()()),
+%%   <<"containerInstanceArns">> => list(string()),
 %%   <<"nextToken">> => string()
 %% }
 -type list_container_instances_response() :: #{binary() => any()}.
@@ -1510,33 +1535,34 @@
 %% Example:
 %% update_cluster_settings_request() :: #{
 %%   <<"cluster">> := string(),
-%%   <<"settings">> := list(cluster_setting()())
+%%   <<"settings">> := list(cluster_setting())
 %% }
 -type update_cluster_settings_request() :: #{binary() => any()}.
 
 %% Example:
 %% update_service_request() :: #{
 %%   <<"availabilityZoneRebalancing">> => list(any()),
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"cluster">> => string(),
 %%   <<"deploymentConfiguration">> => deployment_configuration(),
+%%   <<"deploymentController">> => deployment_controller(),
 %%   <<"desiredCount">> => integer(),
 %%   <<"enableECSManagedTags">> => boolean(),
 %%   <<"enableExecuteCommand">> => boolean(),
 %%   <<"forceNewDeployment">> => boolean(),
 %%   <<"healthCheckGracePeriodSeconds">> => integer(),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
-%%   <<"placementConstraints">> => list(placement_constraint()()),
-%%   <<"placementStrategy">> => list(placement_strategy()()),
+%%   <<"placementConstraints">> => list(placement_constraint()),
+%%   <<"placementStrategy">> => list(placement_strategy()),
 %%   <<"platformVersion">> => string(),
 %%   <<"propagateTags">> => list(any()),
 %%   <<"service">> := string(),
 %%   <<"serviceConnectConfiguration">> => service_connect_configuration(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
 %%   <<"taskDefinition">> => string(),
-%%   <<"volumeConfigurations">> => list(service_volume_configuration()()),
-%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration()())
+%%   <<"volumeConfigurations">> => list(service_volume_configuration()),
+%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration())
 %% }
 -type update_service_request() :: #{binary() => any()}.
 
@@ -1544,7 +1570,7 @@
 %% ebs_tag_specification() :: #{
 %%   <<"propagateTags">> => list(any()),
 %%   <<"resourceType">> => list(any()),
-%%   <<"tags">> => list(tag()())
+%%   <<"tags">> => list(tag())
 %% }
 -type ebs_tag_specification() :: #{binary() => any()}.
 
@@ -1603,7 +1629,7 @@
 
 %% Example:
 %% delete_attributes_request() :: #{
-%%   <<"attributes">> := list(attribute()()),
+%%   <<"attributes">> := list(attribute()),
 %%   <<"cluster">> => string()
 %% }
 -type delete_attributes_request() :: #{binary() => any()}.
@@ -1617,8 +1643,8 @@
 
 %% Example:
 %% update_task_protection_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"protectedTasks">> => list(protected_task()())
+%%   <<"failures">> => list(failure()),
+%%   <<"protectedTasks">> => list(protected_task())
 %% }
 -type update_task_protection_response() :: #{binary() => any()}.
 
@@ -1689,9 +1715,16 @@
 -type no_update_available_exception() :: #{binary() => any()}.
 
 %% Example:
+%% service_revision_load_balancer() :: #{
+%%   <<"productionListenerRule">> => string(),
+%%   <<"targetGroupArn">> => string()
+%% }
+-type service_revision_load_balancer() :: #{binary() => any()}.
+
+%% Example:
 %% delete_task_definitions_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"taskDefinitions">> => list(task_definition()())
+%%   <<"failures">> => list(failure()),
+%%   <<"taskDefinitions">> => list(task_definition())
 %% }
 -type delete_task_definitions_response() :: #{binary() => any()}.
 
@@ -1762,24 +1795,24 @@
 
 %% Example:
 %% register_task_definition_request() :: #{
-%%   <<"containerDefinitions">> := list(container_definition()()),
+%%   <<"containerDefinitions">> := list(container_definition()),
 %%   <<"cpu">> => string(),
 %%   <<"enableFaultInjection">> => boolean(),
 %%   <<"ephemeralStorage">> => ephemeral_storage(),
 %%   <<"executionRoleArn">> => string(),
 %%   <<"family">> := string(),
-%%   <<"inferenceAccelerators">> => list(inference_accelerator()()),
+%%   <<"inferenceAccelerators">> => list(inference_accelerator()),
 %%   <<"ipcMode">> => list(any()),
 %%   <<"memory">> => string(),
 %%   <<"networkMode">> => list(any()),
 %%   <<"pidMode">> => list(any()),
-%%   <<"placementConstraints">> => list(task_definition_placement_constraint()()),
+%%   <<"placementConstraints">> => list(task_definition_placement_constraint()),
 %%   <<"proxyConfiguration">> => proxy_configuration(),
 %%   <<"requiresCompatibilities">> => list(list(any())()),
 %%   <<"runtimePlatform">> => runtime_platform(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskRoleArn">> => string(),
-%%   <<"volumes">> => list(volume()())
+%%   <<"volumes">> => list(volume())
 %% }
 -type register_task_definition_request() :: #{binary() => any()}.
 
@@ -1787,7 +1820,7 @@
 %% describe_tasks_request() :: #{
 %%   <<"cluster">> => string(),
 %%   <<"include">> => list(list(any())()),
-%%   <<"tasks">> := list(string()())
+%%   <<"tasks">> := list(string())
 %% }
 -type describe_tasks_request() :: #{binary() => any()}.
 
@@ -1826,20 +1859,30 @@
 
 %% Example:
 %% describe_clusters_response() :: #{
-%%   <<"clusters">> => list(cluster()()),
-%%   <<"failures">> => list(failure()())
+%%   <<"clusters">> => list(cluster()),
+%%   <<"failures">> => list(failure())
 %% }
 -type describe_clusters_response() :: #{binary() => any()}.
 
 %% Example:
+%% advanced_configuration() :: #{
+%%   <<"alternateTargetGroupArn">> => string(),
+%%   <<"productionListenerRule">> => string(),
+%%   <<"roleArn">> => string(),
+%%   <<"testListenerRule">> => string()
+%% }
+-type advanced_configuration() :: #{binary() => any()}.
+
+%% Example:
 %% start_task_response() :: #{
-%%   <<"failures">> => list(failure()()),
-%%   <<"tasks">> => list(task()())
+%%   <<"failures">> => list(failure()),
+%%   <<"tasks">> => list(task())
 %% }
 -type start_task_response() :: #{binary() => any()}.
 
 %% Example:
 %% load_balancer() :: #{
+%%   <<"advancedConfiguration">> => advanced_configuration(),
 %%   <<"containerName">> => string(),
 %%   <<"containerPort">> => integer(),
 %%   <<"loadBalancerName">> => string(),
@@ -1868,8 +1911,8 @@
 
 %% Example:
 %% kernel_capabilities() :: #{
-%%   <<"add">> => list(string()()),
-%%   <<"drop">> => list(string()())
+%%   <<"add">> => list(string()),
+%%   <<"drop">> => list(string())
 %% }
 -type kernel_capabilities() :: #{binary() => any()}.
 
@@ -1915,12 +1958,12 @@
 %% Example:
 %% linux_parameters() :: #{
 %%   <<"capabilities">> => kernel_capabilities(),
-%%   <<"devices">> => list(device()()),
+%%   <<"devices">> => list(device()),
 %%   <<"initProcessEnabled">> => boolean(),
 %%   <<"maxSwap">> => integer(),
 %%   <<"sharedMemorySize">> => integer(),
 %%   <<"swappiness">> => integer(),
-%%   <<"tmpfs">> => list(tmpfs()())
+%%   <<"tmpfs">> => list(tmpfs())
 %% }
 -type linux_parameters() :: #{binary() => any()}.
 
@@ -1931,8 +1974,14 @@
 -type submit_task_state_change_response() :: #{binary() => any()}.
 
 %% Example:
+%% resolved_configuration() :: #{
+%%   <<"loadBalancers">> => list(service_revision_load_balancer())
+%% }
+-type resolved_configuration() :: #{binary() => any()}.
+
+%% Example:
 %% service_connect_service() :: #{
-%%   <<"clientAliases">> => list(service_connect_client_alias()()),
+%%   <<"clientAliases">> => list(service_connect_client_alias()),
 %%   <<"discoveryName">> => string(),
 %%   <<"ingressPortOverride">> => integer(),
 %%   <<"portName">> => string(),
@@ -1947,6 +1996,13 @@
 %%   <<"value">> => float()
 %% }
 -type scale() :: #{binary() => any()}.
+
+%% Example:
+%% service_connect_test_traffic_header_rules() :: #{
+%%   <<"name">> => string(),
+%%   <<"value">> => service_connect_test_traffic_header_match_rules()
+%% }
+-type service_connect_test_traffic_header_rules() :: #{binary() => any()}.
 
 %% Example:
 %% server_exception() :: #{
@@ -1970,7 +2026,7 @@
 
 %% Example:
 %% describe_service_deployments_request() :: #{
-%%   <<"serviceDeploymentArns">> := list(string()())
+%%   <<"serviceDeploymentArns">> := list(string())
 %% }
 -type describe_service_deployments_request() :: #{binary() => any()}.
 
@@ -2018,8 +2074,8 @@
 
 %% Example:
 %% describe_capacity_providers_response() :: #{
-%%   <<"capacityProviders">> => list(capacity_provider()()),
-%%   <<"failures">> => list(failure()()),
+%%   <<"capacityProviders">> => list(capacity_provider()),
+%%   <<"failures">> => list(failure()),
 %%   <<"nextToken">> => string()
 %% }
 -type describe_capacity_providers_response() :: #{binary() => any()}.
@@ -2047,22 +2103,23 @@
 %% Example:
 %% list_services_by_namespace_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"serviceArns">> => list(string()())
+%%   <<"serviceArns">> => list(string())
 %% }
 -type list_services_by_namespace_response() :: #{binary() => any()}.
 
 %% Example:
 %% service_connect_client_alias() :: #{
 %%   <<"dnsName">> => string(),
-%%   <<"port">> => integer()
+%%   <<"port">> => integer(),
+%%   <<"testTrafficRules">> => service_connect_test_traffic_rules()
 %% }
 -type service_connect_client_alias() :: #{binary() => any()}.
 
 %% Example:
 %% aws_vpc_configuration() :: #{
 %%   <<"assignPublicIp">> => list(any()),
-%%   <<"securityGroups">> => list(string()()),
-%%   <<"subnets">> => list(string()())
+%%   <<"securityGroups">> => list(string()),
+%%   <<"subnets">> => list(string())
 %% }
 -type aws_vpc_configuration() :: #{binary() => any()}.
 
@@ -2072,7 +2129,7 @@
 %%   <<"capacityProviderArn">> => string(),
 %%   <<"name">> => string(),
 %%   <<"status">> => list(any()),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"updateStatus">> => list(any()),
 %%   <<"updateStatusReason">> => string()
 %% }
@@ -2082,13 +2139,13 @@
 %% create_capacity_provider_request() :: #{
 %%   <<"autoScalingGroupProvider">> := auto_scaling_group_provider(),
 %%   <<"name">> := string(),
-%%   <<"tags">> => list(tag()())
+%%   <<"tags">> => list(tag())
 %% }
 -type create_capacity_provider_request() :: #{binary() => any()}.
 
 %% Example:
 %% put_attributes_request() :: #{
-%%   <<"attributes">> := list(attribute()()),
+%%   <<"attributes">> := list(attribute()),
 %%   <<"cluster">> => string()
 %% }
 -type put_attributes_request() :: #{binary() => any()}.
@@ -2117,24 +2174,25 @@
 
 %% Example:
 %% service_revision() :: #{
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clusterArn">> => string(),
-%%   <<"containerImages">> => list(container_image()()),
+%%   <<"containerImages">> => list(container_image()),
 %%   <<"createdAt">> => non_neg_integer(),
 %%   <<"fargateEphemeralStorage">> => deployment_ephemeral_storage(),
 %%   <<"guardDutyEnabled">> => boolean(),
 %%   <<"launchType">> => list(any()),
-%%   <<"loadBalancers">> => list(load_balancer()()),
+%%   <<"loadBalancers">> => list(load_balancer()),
 %%   <<"networkConfiguration">> => network_configuration(),
 %%   <<"platformFamily">> => string(),
 %%   <<"platformVersion">> => string(),
+%%   <<"resolvedConfiguration">> => resolved_configuration(),
 %%   <<"serviceArn">> => string(),
 %%   <<"serviceConnectConfiguration">> => service_connect_configuration(),
-%%   <<"serviceRegistries">> => list(service_registry()()),
+%%   <<"serviceRegistries">> => list(service_registry()),
 %%   <<"serviceRevisionArn">> => string(),
 %%   <<"taskDefinition">> => string(),
-%%   <<"volumeConfigurations">> => list(service_volume_configuration()()),
-%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration()())
+%%   <<"volumeConfigurations">> => list(service_volume_configuration()),
+%%   <<"vpcLatticeConfigurations">> => list(vpc_lattice_configuration())
 %% }
 -type service_revision() :: #{binary() => any()}.
 
@@ -2178,7 +2236,7 @@
 
 %% Example:
 %% submit_attachment_state_changes_request() :: #{
-%%   <<"attachments">> := list(attachment_state_change()()),
+%%   <<"attachments">> := list(attachment_state_change()),
 %%   <<"cluster">> => string()
 %% }
 -type submit_attachment_state_changes_request() :: #{binary() => any()}.
@@ -2205,14 +2263,14 @@
 
 %% Example:
 %% describe_service_revisions_request() :: #{
-%%   <<"serviceRevisionArns">> := list(string()())
+%%   <<"serviceRevisionArns">> := list(string())
 %% }
 -type describe_service_revisions_request() :: #{binary() => any()}.
 
 %% Example:
 %% list_tasks_response() :: #{
 %%   <<"nextToken">> => string(),
-%%   <<"taskArns">> => list(string()())
+%%   <<"taskArns">> => list(string())
 %% }
 -type list_tasks_response() :: #{binary() => any()}.
 
@@ -2231,7 +2289,7 @@
 %%   <<"roleArn">> => string(),
 %%   <<"sizeInGiB">> => integer(),
 %%   <<"snapshotId">> => string(),
-%%   <<"tagSpecifications">> => list(ebs_tag_specification()()),
+%%   <<"tagSpecifications">> => list(ebs_tag_specification()),
 %%   <<"terminationPolicy">> => task_managed_ebs_volume_termination_policy(),
 %%   <<"throughput">> => integer(),
 %%   <<"volumeInitializationRate">> => integer(),
@@ -2243,7 +2301,7 @@
 %% log_configuration() :: #{
 %%   <<"logDriver">> => list(any()),
 %%   <<"options">> => map(),
-%%   <<"secretOptions">> => list(secret()())
+%%   <<"secretOptions">> => list(secret())
 %% }
 -type log_configuration() :: #{binary() => any()}.
 
@@ -2251,20 +2309,20 @@
 %% container_instance() :: #{
 %%   <<"agentConnected">> => boolean(),
 %%   <<"agentUpdateStatus">> => list(any()),
-%%   <<"attachments">> => list(attachment()()),
-%%   <<"attributes">> => list(attribute()()),
+%%   <<"attachments">> => list(attachment()),
+%%   <<"attributes">> => list(attribute()),
 %%   <<"capacityProviderName">> => string(),
 %%   <<"containerInstanceArn">> => string(),
 %%   <<"ec2InstanceId">> => string(),
 %%   <<"healthStatus">> => container_instance_health_status(),
 %%   <<"pendingTasksCount">> => integer(),
 %%   <<"registeredAt">> => non_neg_integer(),
-%%   <<"registeredResources">> => list(resource()()),
-%%   <<"remainingResources">> => list(resource()()),
+%%   <<"registeredResources">> => list(resource()),
+%%   <<"remainingResources">> => list(resource()),
 %%   <<"runningTasksCount">> => integer(),
 %%   <<"status">> => string(),
 %%   <<"statusReason">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"version">> => float(),
 %%   <<"versionInfo">> => version_info()
 %% }
@@ -2325,7 +2383,7 @@
 %%   <<"roleArn">> => string(),
 %%   <<"sizeInGiB">> => integer(),
 %%   <<"snapshotId">> => string(),
-%%   <<"tagSpecifications">> => list(ebs_tag_specification()()),
+%%   <<"tagSpecifications">> => list(ebs_tag_specification()),
 %%   <<"throughput">> => integer(),
 %%   <<"volumeInitializationRate">> => integer(),
 %%   <<"volumeType">> => string()
@@ -2334,21 +2392,21 @@
 
 %% Example:
 %% register_task_definition_response() :: #{
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> => task_definition()
 %% }
 -type register_task_definition_response() :: #{binary() => any()}.
 
 %% Example:
 %% describe_clusters_request() :: #{
-%%   <<"clusters">> => list(string()()),
+%%   <<"clusters">> => list(string()),
 %%   <<"include">> => list(list(any())())
 %% }
 -type describe_clusters_request() :: #{binary() => any()}.
 
 %% Example:
 %% run_task_request() :: #{
-%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()()),
+%%   <<"capacityProviderStrategy">> => list(capacity_provider_strategy_item()),
 %%   <<"clientToken">> => string(),
 %%   <<"cluster">> => string(),
 %%   <<"count">> => integer(),
@@ -2358,15 +2416,15 @@
 %%   <<"launchType">> => list(any()),
 %%   <<"networkConfiguration">> => network_configuration(),
 %%   <<"overrides">> => task_override(),
-%%   <<"placementConstraints">> => list(placement_constraint()()),
-%%   <<"placementStrategy">> => list(placement_strategy()()),
+%%   <<"placementConstraints">> => list(placement_constraint()),
+%%   <<"placementStrategy">> => list(placement_strategy()),
 %%   <<"platformVersion">> => string(),
 %%   <<"propagateTags">> => list(any()),
 %%   <<"referenceId">> => string(),
 %%   <<"startedBy">> => string(),
-%%   <<"tags">> => list(tag()()),
+%%   <<"tags">> => list(tag()),
 %%   <<"taskDefinition">> := string(),
-%%   <<"volumeConfigurations">> => list(task_volume_configuration()())
+%%   <<"volumeConfigurations">> => list(task_volume_configuration())
 %% }
 -type run_task_request() :: #{binary() => any()}.
 
@@ -2390,7 +2448,7 @@
 
 %% Example:
 %% list_attributes_response() :: #{
-%%   <<"attributes">> => list(attribute()()),
+%%   <<"attributes">> => list(attribute()),
 %%   <<"nextToken">> => string()
 %% }
 -type list_attributes_response() :: #{binary() => any()}.
@@ -2412,7 +2470,7 @@
 %% Example:
 %% tmpfs() :: #{
 %%   <<"containerPath">> => string(),
-%%   <<"mountOptions">> => list(string()()),
+%%   <<"mountOptions">> => list(string()),
 %%   <<"size">> => integer()
 %% }
 -type tmpfs() :: #{binary() => any()}.
@@ -2450,7 +2508,7 @@
 %%   <<"integerValue">> => integer(),
 %%   <<"longValue">> => float(),
 %%   <<"name">> => string(),
-%%   <<"stringSetValue">> => list(string()()),
+%%   <<"stringSetValue">> => list(string()),
 %%   <<"type">> => string()
 %% }
 -type resource() :: #{binary() => any()}.
@@ -3009,80 +3067,118 @@ create_cluster(Client, Input, Options)
 %% you don't
 %% need to specify a desired number of tasks, a task placement strategy, or
 %% use
-%% Service Auto Scaling policies. For more information, see Service scheduler
-%% concepts:
+%% Service Auto Scaling policies. For more information, see Amazon ECS
+%% services:
 %% https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html
 %% in the Amazon Elastic Container Service Developer Guide.
 %%
-%% You can optionally specify a deployment configuration for your service.
-%% The deployment
-%% is initiated by changing properties. For example, the deployment might be
-%% initiated by
-%% the task definition or by your desired count of a service. You can use
-%% UpdateService:
-%% https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateService.html.
-%% The default value for a replica service for
-%% `minimumHealthyPercent' is 100%. The default value for a daemon
+%% The deployment controller is the mechanism that determines how tasks are
+%% deployed for
+%% your service. The valid options are:
+%%
+%% ECS
+%%
+%% When you create a service which uses the `ECS' deployment controller,
+%% you can choose between the following deployment strategies:
+%%
+%% `ROLLING': When you create a service which uses the rolling update
+%% (`ROLLING') deployment strategy, the Amazon ECS service scheduler
+%% replaces the
+%% currently running tasks with new tasks. The number of tasks that Amazon
+%% ECS adds or
+%% removes from the service during a rolling update is controlled by the
 %% service
-%% for `minimumHealthyPercent' is 0%.
+%% deployment configuration. For more information, see Deploy Amazon ECS
+%% services by replacing tasks:
+%% https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html
+%% in the Amazon Elastic Container Service Developer Guide.
 %%
-%% If a service uses the `ECS' deployment controller, the minimum healthy
-%% percent represents a lower limit on the number of tasks in a service that
-%% must remain in
-%% the `RUNNING' state during a deployment. Specifically, it represents
-%% it as a
-%% percentage of your desired number of tasks (rounded up to the nearest
-%% integer). This
-%% happens when any of your container instances are in the `DRAINING'
-%% state if
-%% the service contains tasks using the EC2 launch type. Using this
-%% parameter, you can deploy without using additional cluster capacity. For
-%% example, if you
-%% set your service to have desired number of four tasks and a minimum
-%% healthy percent of
-%% 50%, the scheduler might stop two existing tasks to free up cluster
-%% capacity before
-%% starting two new tasks. If they're in the `RUNNING' state, tasks
-%% for services
-%% that don't use a load balancer are considered healthy . If they're
-%% in the
-%% `RUNNING' state and reported as healthy by the load balancer, tasks
-%% for
-%% services that do use a load balancer are considered healthy . The
-%% default value for minimum healthy percent is 100%.
+%% Rolling update deployments are best suited for the following scenarios:
 %%
-%% If a service uses the `ECS' deployment controller, the maximum percent
-%% parameter represents an upper limit on the
-%% number of tasks in a service that are allowed in the `RUNNING' or
-%% `PENDING' state during a deployment. Specifically, it represents it as
-%% a
-%% percentage of the desired number of tasks (rounded down to the nearest
-%% integer). This
-%% happens when any of your container instances are in the `DRAINING'
-%% state if
-%% the service contains tasks using the EC2 launch type. Using this
-%% parameter, you can define the deployment batch size. For example, if your
-%% service has a
-%% desired number of four tasks and a maximum percent value of 200%, the
-%% scheduler may
-%% start four new tasks before stopping the four older tasks (provided that
-%% the cluster
-%% resources required to do this are available). The default value for
-%% maximum percent is
-%% 200%.
+%% Gradual service updates: You need to
+%% update your service incrementally without taking the entire service
+%% offline at once.
 %%
-%% If a service uses either the `CODE_DEPLOY' or `EXTERNAL'
-%% deployment controller types and tasks that use the EC2 launch type, the
-%% minimum healthy percent and maximum percent values are used only to define
-%% the lower and upper limit
-%% on the number of the tasks in the service that remain in the `RUNNING'
-%% state.
-%% This is while the container instances are in the `DRAINING' state. If
-%% the
-%% tasks in the service use the Fargate launch type, the minimum healthy
-%% percent and maximum percent values aren't used. This is the case even
-%% if they're
-%% currently visible when describing your service.
+%% Limited resource requirements: You
+%% want to avoid the additional resource costs of running two complete
+%% environments simultaneously (as required by blue/green
+%% deployments).
+%%
+%% Acceptable deployment time: Your
+%% application can tolerate a longer deployment process, as rolling updates
+%% replace tasks one by one.
+%%
+%% No need for instant roll back: Your
+%% service can tolerate a rollback process that takes minutes rather than
+%% seconds.
+%%
+%% Simple deployment process: You prefer
+%% a straightforward deployment approach without the complexity of managing
+%% multiple environments, target groups, and listeners.
+%%
+%% No load balancer requirement: Your
+%% service doesn't use or require a load balancer, Application Load
+%% Balancer, Network Load Balancer, or Service Connect (which are required
+%% for blue/green deployments).
+%%
+%% Stateful applications: Your
+%% application maintains state that makes it difficult to run two parallel
+%% environments.
+%%
+%% Cost sensitivity: You want to
+%% minimize deployment costs by not running duplicate environments during
+%% deployment.
+%%
+%% Rolling updates are the default deployment strategy for services and
+%% provide a
+%% balance between deployment safety and resource efficiency for many common
+%% application scenarios.
+%%
+%% `BLUE_GREEN': A blue/green deployment strategy (`BLUE_GREEN') is a
+%% release methodology that reduces downtime and
+%% risk by running two identical production environments called blue and
+%% green.
+%% With Amazon ECS blue/green deployments, you can validate new service
+%% revisions before
+%% directing production traffic to them. This approach provides a safer way
+%% to
+%% deploy changes with the ability to quickly roll back if needed. For more
+%% information, see Amazon ECS blue/green deployments:
+%% https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-blue-green.html
+%% in the Amazon Elastic Container Service Developer Guide.
+%%
+%% Amazon ECS blue/green deployments are best suited for the following
+%% scenarios:
+%%
+%% Service validation: When you need to
+%% validate new service revisions before directing production traffic to
+%% them
+%%
+%% Zero downtime: When your service
+%% requires zero-downtime deployments
+%%
+%% Instant roll back: When you
+%% need the ability to quickly roll back if issues are detected
+%%
+%% Load balancer requirement: When your
+%% service uses Application Load Balancer, Network Load Balancer, or Service
+%% Connect
+%%
+%% External
+%%
+%% Use a third-party deployment controller.
+%%
+%% Blue/green deployment (powered by CodeDeploy)
+%%
+%% CodeDeploy installs an updated version of the application as a new
+%% replacement task
+%% set and reroutes production traffic from the original application task set
+%% to
+%% the replacement task set. The original task set is terminated after a
+%% successful
+%% deployment. Use this deployment controller to verify a new deployment of a
+%% service
+%% before sending production traffic to it.
 %%
 %% When creating a service that uses the `EXTERNAL' deployment
 %% controller, you
