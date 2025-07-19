@@ -552,10 +552,13 @@
 %%   <<"Bitrate">> => integer(),
 %%   <<"CodecProfile">> => list(any()),
 %%   <<"CodingMode">> => list(any()),
+%%   <<"LoudnessMeasurementMode">> => list(any()),
+%%   <<"RapInterval">> => integer(),
 %%   <<"RateControlMode">> => list(any()),
 %%   <<"RawFormat">> => list(any()),
 %%   <<"SampleRate">> => integer(),
 %%   <<"Specification">> => list(any()),
+%%   <<"TargetLoudnessRange">> => integer(),
 %%   <<"VbrQuality">> => list(any())
 %% }
 -type aac_settings() :: #{binary() => any()}.
@@ -1148,6 +1151,7 @@
 %%   <<"ProgramNumber">> => integer(),
 %%   <<"PsiControl">> => list(any()),
 %%   <<"SupplementalImps">> => list(string()),
+%%   <<"TamsSettings">> => input_tams_settings(),
 %%   <<"TimecodeSource">> => list(any()),
 %%   <<"TimecodeStart">> => string(),
 %%   <<"VideoGenerator">> => input_video_generator(),
@@ -2832,6 +2836,16 @@
 %%   <<"StylePassthrough">> => list(any())
 %% }
 -type imsc_destination_settings() :: #{binary() => any()}.
+
+
+%% Example:
+%% input_tams_settings() :: #{
+%%   <<"AuthConnectionArn">> => string(),
+%%   <<"GapHandling">> => list(any()),
+%%   <<"SourceId">> => string(),
+%%   <<"Timerange">> => string()
+%% }
+-type input_tams_settings() :: #{binary() => any()}.
 
 %% Example:
 %% delete_queue_response() :: #{}
